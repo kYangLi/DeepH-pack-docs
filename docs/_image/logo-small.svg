@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.44 110.58">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-miterlimit: 8;
+      }
+
+      .cls-1, .cls-6, .cls-7, .cls-9 {
+        stroke-width: 2.73px;
+      }
+
+      .cls-1, .cls-8 {
+        stroke: #036eb7;
+      }
+
+      .cls-2, .cls-4, .cls-5, .cls-8 {
+        stroke-width: 3.64px;
+      }
+
+      .cls-2, .cls-7 {
+        stroke: #00913a;
+      }
+
+      .cls-10 {
+        fill: #fff;
+      }
+
+      .cls-11 {
+        stroke: #e73828;
+        stroke-linejoin: round;
+        stroke-width: .46px;
+      }
+
+      .cls-11, .cls-12 {
+        fill: #e73828;
+      }
+
+      .cls-4, .cls-6 {
+        stroke: #8f338e;
+      }
+
+      .cls-5, .cls-9 {
+        stroke: #cb3c33;
+      }
+
+      .cls-13 {
+        fill: #666;
+        font-family: ArialMT, Arial;
+        font-size: 18px;
+      }
+    </style>
+  </defs>
+  <text class="cls-13" transform="translate(15.46 94.17) scale(1.04 1)"><tspan x="0" y="0">DeepH-pack</tspan></text>
+  <g>
+    <g>
+      <line class="cls-2" x1="99.04" y1="43.33" x2="79.27" y2="43.33"/>
+      <path class="cls-7" d="M106.48,43.47c0-1.99-1.62-3.61-3.62-3.61s-3.62,1.61-3.62,3.61,1.62,3.61,3.62,3.61,3.62-1.61,3.62-3.61h0Z"/>
+      <polyline class="cls-2" points="87.66 43.33 100.31 55.73 112.26 55.73"/>
+      <path class="cls-7" d="M119.79,55.73c0-1.91-1.62-3.46-3.62-3.46s-3.62,1.55-3.62,3.46,1.62,3.46,3.62,3.46,3.62-1.55,3.62-3.46h0Z"/>
+    </g>
+    <g>
+      <polyline class="cls-4" points="50.33 54.58 43.16 54.58 32.96 64.67 28.91 64.67"/>
+      <path class="cls-6" d="M21.67,64.67c0-1.91,1.62-3.46,3.62-3.46s3.62,1.55,3.62,3.46-1.62,3.46-3.62,3.46-3.62-1.55-3.62-3.46h0Z"/>
+    </g>
+    <g>
+      <line class="cls-5" x1="22.54" y1="46.79" x2="52.54" y2="46.79"/>
+      <path class="cls-9" d="M15.01,46.64c0-1.99,1.62-3.61,3.62-3.61s3.62,1.61,3.62,3.61-1.62,3.61-3.62,3.61-3.62-1.61-3.62-3.61h0Z"/>
+    </g>
+    <g>
+      <polyline class="cls-8" points="55.25 38.71 41.2 38.71 35.56 33.23"/>
+      <path class="cls-1" d="M29.2,30.49c0-1.99,1.62-3.61,3.62-3.61s3.62,1.61,3.62,3.61-1.62,3.61-3.62,3.61-3.62-1.61-3.62-3.61h0Z"/>
+    </g>
+    <polygon class="cls-3" points="3.11 79.45 136.9 79.45 136.9 12.61 3.11 12.61 3.11 79.45 3.11 79.45"/>
+    <g>
+      <rect class="cls-10" x="50.33" y="43.87" width="31.49" height="11.31"/>
+      <polygon class="cls-10" points="49.88 28.02 61.69 28.02 55.79 69.88 43.95 69.88 49.88 28.02"/>
+      <polygon class="cls-10" points="75.14 28.26 86.95 28.26 81.05 70.12 69.22 70.12 75.14 28.26"/>
+    </g>
+    <g>
+      <polygon class="cls-11" points="68.27 17.94 79.27 25.04 78.8 26.02 68.23 20.56 57.7 26.02 57.27 25.04 68.27 17.94 68.27 17.94"/>
+      <g>
+        <polyline class="cls-12" points="51.86 30.47 58.91 30.47 53.66 67.43 46.73 67.43"/>
+        <polyline class="cls-12" points="77.12 30.71 84.18 30.71 78.93 67.68 71.99 67.68"/>
+        <rect class="cls-12" x="52.89" y="46.35" width="26.34" height="6.35"/>
+      </g>
+    </g>
+  </g>
+</svg>
