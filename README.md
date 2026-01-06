@@ -17,7 +17,7 @@
 
 The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [solid foundation of its predecessor]((https://github.com/mzjb/DeepH-pack)) and has been re-engineered with [JAX](https://github.com/jax-ml/jax) and [FLAX](https://github.com/google/flax) to unlock new levels of efficiency and flexibility.
 
-Coming Soon!
+*Further online documentation will be available soon!*
 
 ## Citation
 
