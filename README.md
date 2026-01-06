@@ -15,32 +15,36 @@
 
 ## Core Features & Basic Usage
 
-Comming Soon!
+Coming Soon!
 
 ## Citation
 
-**Any and all use of this software, in whole or in part, should clearly acknowledge and link to this repository.**
+*Any and all use of this software, in whole or in part, should clearly acknowledge and link to this repository.*
 
-If you use `DeepH-pack` in your academic work, please cite:
+If you use `DeepH-pack` in your work, please consider citing the following relevant publications.
 
 1. **Latest Software Implementation**
 
-    - [Li, Y., Wang, Y., Zhao, B., *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv. (2026) (Submitted)](https://cmt-deeph-download-1311443801.cos.accelerate.myqcloud.com/DeepH-pack-2026.pdf)
+    - [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv. (2026) (Submitted)](https://cmt-deeph-download-1311443801.cos.accelerate.myqcloud.com/DeepH-pack-2026.pdf)
 
-2. **Architecture advancements**
+2. **Review of Recent Advancement**
 
-    - Original framework [Nat. Comput. Sci. 2022](https://www.nature.com/articles/s43588-022-00265-6)
-    - Integrating equivariant neural network [Nat. Commun. 2023](https://www.nature.com/articles/s41467-023-38468-8)
-    - Incorporating eSCN tensor product [arXiv 2024](https://arxiv.org/abs/2401.17015)
-    - Incorporating the spirit of unsupervised learning [PRL 2024](link.aps.org/doi/10.1103/PhysRevLett.133.076401)
+    - [Zechen Tang, Haoxiang Chen, *et al*. Deep-learning electronic structure calculations. Nat. Comput. Sci. 5, 1133 (2025)](https://doi.org/10.1038/s43588-025-00932-4)
 
-3. **Improved compatibility with first-principles codes**
+3. **Architecture advancements**
 
-    - Compatibility with plane-wave DFT [Nat. Comput. Sci. 2024](https://www.nature.com/articles/s43588-024-00701-9)
-    - Extension to hybrid DFT [Nat. Commun. 2024](https://www.nature.com/articles/s41467-024-53028-4)
+    - Original framework [Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-024-00723-3)
+    - Integrating equivariant neural network [Nat. Commun. 14, 2848 (2023)](https://doi.org/10.1038/s41467-023-38468-8)
+    - Incorporating eSCN tensor product [arXiv:2401.17015 (2024)](https://arxiv.org/abs/2401.17015)
+    - Incorporating the spirit of unsupervised learning [Phys. Rev. Lett. 133, 076401 (2024)](https://doi.org/10.1103/PhysRevLett.133.076401)
 
-4. **Exploration of application scenarios**
+4. **Improved compatibility with first-principles codes**
 
-    - Dealing with magnetism with extended DeepH [Nat. Comput. Sci. 2023](https://www.nature.com/articles/s43588-023-00424-3)
-    - Investigating density functional perturbation theory, such as electron-phonon coupling [PRL 2024](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.096401)
-    - Developing a "large materials model", a universal model for electronic structures [Sci. Bull. 2024](https://www.sciencedirect.com/science/article/pii/S2095927324004079)
+    - Compatibility with plane-wave DFT [Nat. Comput. Sci. 4, 752 (2024)](https://doi.org/10.1038/s43588-024-00701-9)
+    - Extension to hybrid DFT [Nat. Commun. 15, 8815 (2024)](https://doi.org/10.1038/s41467-024-53028-4)
+
+5. **Exploration of application scenarios**
+
+    - Dealing with magnetism with extended DeepH [Nat. Comput. Sci. 3, 321 (2023)](https://doi.org/10.1038/s43588-023-00424-3)
+    - Investigating density functional perturbation theory, such as electron-phonon coupling [Phys. Rev. Lett. 132, 096401 (2024)](https://doi.org/10.1103/PhysRevLett.132.096401)
+    - Developing a "large materials model", a universal model for electronic structures [Sci. Bull. 69, 2514 (2024)](https://doi.org/10.1016/j.scib.2024.06.011)
