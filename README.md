@@ -50,3 +50,7 @@ If you use `DeepH-pack` in your work, please consider citing the following relev
     - Dealing with magnetism with extended DeepH [Nat. Comput. Sci. 3, 321 (2023)](https://doi.org/10.1038/s43588-023-00424-3)
     - Investigating density functional perturbation theory [Phys. Rev. Lett. 132, 096401 (2024)](https://doi.org/10.1103/PhysRevLett.132.096401)
     - Developing the universal model for electronic structures [Sci. Bull. 69, 2514 (2024)](https://doi.org/10.1016/j.scib.2024.06.011)
+
+---
+
+*DeepH-pack is a general-purpose neural network package designed for deep-learning electronic structure calculations, empowering computational materials science with accelerated speed and enhanced efficiency through intelligent algorithms.*
