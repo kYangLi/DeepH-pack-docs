@@ -29,14 +29,14 @@ If you use `DeepH-pack` in your work, please consider citing the following relev
 
 2. **Review of Recent Advancement**
 
-    - [Zechen Tang, Haoxiang Chen, *et al*. Deep-learning electronic structure calculations. Nat. Comput. Sci. 5, 1133 (2025)](https://doi.org/10.1038/s43588-025-00932-4)
+    - From DeepH and ML-QMC to fast, accurate materials computation [Nat. Comput. Sci. 5, 1133 (2025)](https://doi.org/10.1038/s43588-025-00932-4)
 
 3. **Architecture advancements**
 
     - Original framework [Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-024-00723-3)
     - Integrating equivariant neural network [Nat. Commun. 14, 2848 (2023)](https://doi.org/10.1038/s41467-023-38468-8)
     - Incorporating eSCN tensor product [arXiv:2401.17015 (2024)](https://arxiv.org/abs/2401.17015)
-    - Incorporating the spirit of unsupervised learning [Phys. Rev. Lett. 133, 076401 (2024)](https://doi.org/10.1103/PhysRevLett.133.076401)
+    - Leveraging physics-informed unsupervised learning [Phys. Rev. Lett. 133, 076401 (2024)](https://doi.org/10.1103/PhysRevLett.133.076401)
 
 4. **Improved compatibility with first-principles codes**
 
@@ -46,5 +46,5 @@ If you use `DeepH-pack` in your work, please consider citing the following relev
 5. **Exploration of application scenarios**
 
     - Dealing with magnetism with extended DeepH [Nat. Comput. Sci. 3, 321 (2023)](https://doi.org/10.1038/s43588-023-00424-3)
-    - Investigating density functional perturbation theory, such as electron-phonon coupling [Phys. Rev. Lett. 132, 096401 (2024)](https://doi.org/10.1103/PhysRevLett.132.096401)
-    - Developing a "large materials model", a universal model for electronic structures [Sci. Bull. 69, 2514 (2024)](https://doi.org/10.1016/j.scib.2024.06.011)
+    - Investigating density functional perturbation theory [Phys. Rev. Lett. 132, 096401 (2024)](https://doi.org/10.1103/PhysRevLett.132.096401)
+    - Developing the universal model for electronic structures [Sci. Bull. 69, 2514 (2024)](https://doi.org/10.1016/j.scib.2024.06.011)
