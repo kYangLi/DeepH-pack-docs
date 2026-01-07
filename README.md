@@ -57,11 +57,11 @@ uv pip install ./deepx-1.0.6+light-py3-none-any.whl[gpu] --extra-index-url https
 
 If you use `DeepH-pack` in your work, please cite the following publications.
 
-- **The original framework paper introduced the foundational methodology.**
+- **The original framework paper introducing the foundational methodology:**
 
     [He Li, Zun Wang, Nianlong Zou, *et al*. Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation. Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
 
-- **Complete package featuring the latest implementation, methodology, and workflow.**
+- **Complete package featuring the latest implementation, methodology, and workflow:**
 
     [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
 
