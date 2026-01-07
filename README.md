@@ -15,6 +15,7 @@
 
 - [Core Features](#core-features)
 - [Quick Start](#quick-start)
+  - [Get Software](#get-software)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
 - [Citation](#citation)
@@ -25,6 +26,10 @@
 The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [solid foundation of its predecessor](https://github.com/mzjb/DeepH-pack) and has been re-engineered with [JAX](https://github.com/jax-ml/jax) and [FLAX](https://github.com/google/flax) to unlock new levels of efficiency and flexibility.
 
 ## Quick Start
+
+### Get Software
+
+Visit the [DeepH-pack official website](https://ticket.deeph-pack.com/) to apply for and obtain the software.
 
 ### Installation
 
