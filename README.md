@@ -25,37 +25,65 @@ The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [so
 
 If you use `DeepH-pack` in your work, please consider citing the following publications.
 
-- [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
+- **Complete package featuring the latest implementation, methodology, and workflow.**
 
-- [He Li, *et al*. Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation. Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
+    [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
+
+    ```bibtex
+        @article{li2026deephpack,
+            title={DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations},
+            author={Li, Yang and Wang, Yanzhen and Zhao, Boheng and Gong, Xiaoxun and Wang, Yuxiang Tang, Zechen and Wang, Zixu and Yuan, Zilong and Li, Jialin and Sun, Minghui and Chen, Zezhou and Tao, Honggeng and Wu, Baochun and Yu, Yuhang and Li, He and da Jornada, Felipe H. and Duan, Wenhui and Xu, Yong },
+            journal={arXiv preprint arXiv:2601.02938},
+            year={2026}
+        }
+    ```
+
+- **The original framework paper introduced the foundational methodology.**
+
+    [He Li, Zun Wang, Nianlong Zou, *et al*. Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation. Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
+
+    ```bibtex
+    @article{li2022deep,
+        title={Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation},
+        author={Li, He and Wang, Zun and Zou, Nianlong and Ye, Meng and Xu, Runzhang and Gong, Xiaoxun and Duan, Wenhui and Xu, Yong},
+        journal={Nat. Comput. Sci.},
+        volume={2},
+        number={6},
+        pages={367},
+        year={2022},
+        publisher={Nature Publishing Group US New York}
+    }
+    ```
 
 ## Publications | DeepH Team
+
+For a comprehensive overview of publications and research employing DeepH methods, please see the relevant section below. We also warmly welcome citations to our foundational papers if your work utilizes the DeepH framework or any of its modules (e.g., [DeepH-E3](https://github.com/Xiaoxun-Gong/DeepH-E3), [HPRO](https://github.com/Xiaoxun-Gong/HPRO)).
 
 1. **Latest Software Implementation**
 
     - [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
 
-2. **Review of Recent Advancement**
+2. **Architecture advancements**
+
+    - **DeepH**: Original framework [Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
+    - **DeepH-E3**: Integrating equivariant neural network [Nat. Commun. 14, 2848 (2023)](https://doi.org/10.1038/s41467-023-38468-8)
+    - **DeepH-2**: Incorporating eSCN tensor product [arXiv:2401.17015 (2024)](https://arxiv.org/abs/2401.17015)
+    - **DeepH-Zero**: Leveraging physics-informed unsupervised learning [Phys. Rev. Lett. 133, 076401 (2024)](https://doi.org/10.1103/PhysRevLett.133.076401)
+
+3. **Improved compatibility with first-principles codes**
+
+    - **HPRO**: Compatibility with plane-wave DFT [Nat. Comput. Sci. 4, 752 (2024)](https://doi.org/10.1038/s43588-024-00701-9)
+    - **DeepH-hybrid**: Extension to hybrid DFT [Nat. Commun. 15, 8815 (2024)](https://doi.org/10.1038/s41467-024-53028-4)
+
+4. **Exploration of application scenarios**
+
+    - **xDeepH**: Dealing with magnetism with extended DeepH [Nat. Comput. Sci. 3, 321 (2023)](https://doi.org/10.1038/s43588-023-00424-3)
+    - **DeepH-DFPT**: Investigating density functional perturbation theory [Phys. Rev. Lett. 132, 096401 (2024)](https://doi.org/10.1103/PhysRevLett.132.096401)
+    - **DeepH-UMM**: Developing the universal model for electronic structures [Sci. Bull. 69, 2514 (2024)](https://doi.org/10.1016/j.scib.2024.06.011)
+
+5. **Review of Recent Advancement**
 
     - From DeepH and ML-QMC to fast, accurate materials computation [Nat. Comput. Sci. 5, 1133 (2025)](https://doi.org/10.1038/s43588-025-00932-4)
-
-3. **Architecture advancements**
-
-    - Original framework [Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
-    - Integrating equivariant neural network [Nat. Commun. 14, 2848 (2023)](https://doi.org/10.1038/s41467-023-38468-8)
-    - Incorporating eSCN tensor product [arXiv:2401.17015 (2024)](https://arxiv.org/abs/2401.17015)
-    - Leveraging physics-informed unsupervised learning [Phys. Rev. Lett. 133, 076401 (2024)](https://doi.org/10.1103/PhysRevLett.133.076401)
-
-4. **Improved compatibility with first-principles codes**
-
-    - Compatibility with plane-wave DFT [Nat. Comput. Sci. 4, 752 (2024)](https://doi.org/10.1038/s43588-024-00701-9)
-    - Extension to hybrid DFT [Nat. Commun. 15, 8815 (2024)](https://doi.org/10.1038/s41467-024-53028-4)
-
-5. **Exploration of application scenarios**
-
-    - Dealing with magnetism with extended DeepH [Nat. Comput. Sci. 3, 321 (2023)](https://doi.org/10.1038/s43588-023-00424-3)
-    - Investigating density functional perturbation theory [Phys. Rev. Lett. 132, 096401 (2024)](https://doi.org/10.1103/PhysRevLett.132.096401)
-    - Developing the universal model for electronic structures [Sci. Bull. 69, 2514 (2024)](https://doi.org/10.1016/j.scib.2024.06.011)
 
 ---
 
