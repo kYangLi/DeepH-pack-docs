@@ -15,7 +15,7 @@
 
 - [Core Features](#core-features)
 - [Quick Start](#quick-start)
-  - [Get Software](#get-software)
+  - [Get the Software](#get-software)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
 - [Citation](#citation)
@@ -27,7 +27,7 @@ The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [so
 
 ## Quick Start
 
-### Get The Software
+### Get the Software
 
 Visit the [DeepH-pack official website](https://ticket.deeph-pack.com/) to apply for and obtain the software.
 
