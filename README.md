@@ -27,7 +27,7 @@ The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [so
 
 ## Quick Start
 
-### Get Software
+### Get The Software
 
 Visit the [DeepH-pack official website](https://ticket.deeph-pack.com/) to apply for and obtain the software.
 
