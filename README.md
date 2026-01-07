@@ -23,11 +23,17 @@ The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [so
 
 *Any and all use of this software, in whole or in part, should clearly acknowledge and link to this repository.*
 
-If you use `DeepH-pack` in your work, please consider citing the following relevant publications.
+If you use `DeepH-pack` in your work, please consider citing the following publications.
+
+- [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
+
+- [He Li, *et al*. Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation. Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
+
+## Publications | DeepH Team
 
 1. **Latest Software Implementation**
 
-    - [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv. (2026) (Submitted)](https://cmt-deeph-download-1311443801.cos.accelerate.myqcloud.com/DeepH-pack-2026.pdf)
+    - [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
 
 2. **Review of Recent Advancement**
 
@@ -35,7 +41,7 @@ If you use `DeepH-pack` in your work, please consider citing the following relev
 
 3. **Architecture advancements**
 
-    - Original framework [Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-024-00723-3)
+    - Original framework [Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
     - Integrating equivariant neural network [Nat. Commun. 14, 2848 (2023)](https://doi.org/10.1038/s41467-023-38468-8)
     - Incorporating eSCN tensor product [arXiv:2401.17015 (2024)](https://arxiv.org/abs/2401.17015)
     - Leveraging physics-informed unsupervised learning [Phys. Rev. Lett. 133, 076401 (2024)](https://doi.org/10.1103/PhysRevLett.133.076401)
