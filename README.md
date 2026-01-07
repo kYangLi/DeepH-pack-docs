@@ -10,7 +10,7 @@
 [![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
 [![GitHub Issues](https://img.shields.io/github/issues/kYangLi/DeepH-pack-docs.svg)](https://github.com/kYangLi/DeepH-pack-docs/issues)
 
-*Drive Speed and Efficiency with Intelligence.*
+*Drive Accuracy and Efficiency with Intelligence.*
 </div>
 
 - [Core Features](#core-features)
