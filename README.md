@@ -30,7 +30,7 @@ The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [so
 
 *Any and all use of this software, in whole or in part, should clearly acknowledge and link to this repository.*
 
-If you use `DeepH-pack` in your work, please consider citing the following publications.
+If you use `DeepH-pack` in your work, please cite the following publications.
 
 - **Complete package featuring the latest implementation, methodology, and workflow.**
 
