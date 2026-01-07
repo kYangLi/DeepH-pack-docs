@@ -36,31 +36,31 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 
     [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
 
-    ```bibtex
-        @article{li2026deephpack,
-            title={DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations},
-            author={Li, Yang and Wang, Yanzhen and Zhao, Boheng and Gong, Xiaoxun and Wang, Yuxiang Tang, Zechen and Wang, Zixu and Yuan, Zilong and Li, Jialin and Sun, Minghui and Chen, Zezhou and Tao, Honggeng and Wu, Baochun and Yu, Yuhang and Li, He and da Jornada, Felipe H. and Duan, Wenhui and Xu, Yong },
-            journal={arXiv preprint arXiv:2601.02938},
-            year={2026}
-        }
-    ```
+```bibtex
+    @article{li2026deephpack,
+        title={DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations},
+        author={Li, Yang and Wang, Yanzhen and Zhao, Boheng and Gong, Xiaoxun and Wang, Yuxiang Tang, Zechen and Wang, Zixu and Yuan, Zilong and Li, Jialin and Sun, Minghui and Chen, Zezhou and Tao, Honggeng and Wu, Baochun and Yu, Yuhang and Li, He and da Jornada, Felipe H. and Duan, Wenhui and Xu, Yong },
+        journal={arXiv preprint arXiv:2601.02938},
+        year={2026}
+    }
+```
 
 - **The original framework paper introduced the foundational methodology.**
 
     [He Li, Zun Wang, Nianlong Zou, *et al*. Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation. Nat. Comput. Sci. 2, 367 (2022)](https://doi.org/10.1038/s43588-022-00265-6)
 
-    ```bibtex
-    @article{li2022deep,
-        title={Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation},
-        author={Li, He and Wang, Zun and Zou, Nianlong and Ye, Meng and Xu, Runzhang and Gong, Xiaoxun and Duan, Wenhui and Xu, Yong},
-        journal={Nat. Comput. Sci.},
-        volume={2},
-        number={6},
-        pages={367},
-        year={2022},
-        publisher={Nature Publishing Group US New York}
-    }
-    ```
+```bibtex
+@article{li2022deep,
+    title={Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation},
+    author={Li, He and Wang, Zun and Zou, Nianlong and Ye, Meng and Xu, Runzhang and Gong, Xiaoxun and Duan, Wenhui and Xu, Yong},
+    journal={Nat. Comput. Sci.},
+    volume={2},
+    number={6},
+    pages={367},
+    year={2022},
+    publisher={Nature Publishing Group US New York}
+}
+```
 
 ## Publications | DeepH Team
 
