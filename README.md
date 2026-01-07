@@ -29,7 +29,7 @@ The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [so
 
 ### Get the Software
 
-Visit the [DeepH-pack official website](https://ticket.deeph-pack.com/) to apply for and obtain the software.
+Please visit the [DeepH-pack official website](https://ticket.deeph-pack.com/) to apply for and obtain the software.
 
 ### Installation
 
