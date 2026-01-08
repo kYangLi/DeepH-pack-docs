@@ -34,15 +34,15 @@ It's worth emphasizing that, despite lasting development, DeepH is still in its 
 
 ## Deep-learning electronic structures with DeepH
 
-A naive illustration of DeepH workflow is demonstrated as follows:
+A naive illustration of the DeepH workflow is demonstrated as follows:
 ![image](_image/DeepH-workflow.png)
 [Source: arXiv:2601.02938 [cond-mat.mtrl-sci]](https://arxiv.org/abs/2601.02938)
 
 The core concept is as follows: Instead of modeling electronic structure properties such as band gap, electric conductivity, etc. directly, we use DeepH to model the DFT Hamiltonian. Although the requirement for postprocessing introduces additional burden to the workflow, the advantages of modeling Hamiltonian is apparent, to name a few:
 
-- DFT Hamiltonian includes *all* electronic structure at mean-field level, therefore in principle all mean-field electronic structures could be derived with a single model.
-- DFT Hamiltonian contains abundant underlying data, therefore favorable for data-hungry deep-learning methods.
-- Through representation under atomic bases, DFT Hamiltonian is compatible to several physical priors inspiring physics-informed design of DeepH.
+- DFT Hamiltonian includes *complete* electronic structure information at the mean-field level, therefore in principle all mean-field electronic structures could be derived with a single model.
+- DFT Hamiltonian contains abundant underlying data, therefore is favorable for data-hungry deep-learning methods.
+- Through representation under atomic orbital basis sets, DFT Hamiltonian is compatible to several physical priors inspiring physics-informed design of DeepH.
 
 In terms of physical priors of DFT Hamiltonians, we first emphasize that DeepH models **DFT Hamiltonians under localized atomic orbital (AO) basis sets**. The basis functions can be denoted by:
 
@@ -63,4 +63,4 @@ In addition, since Hamiltonians are expressed under localized bases, from Walter
 
 DeepH models are **graph neural networks** (GNNs). They take atomic structures as input and predict physical quantities. The input structures are treated as graphs with atoms as nodes. Any pair of atoms $i$ and $j$ are connected by directed edges $i \rightarrow j$ and $j \rightarrow i$ if they're sufficiently close (i.e., their atomic orbital basis functions overlap). There are also self-loops $i \rightarrow i$ in the graph. Physical quantities, such as Hamiltonian matrix elements, are interpreted as *features* associated with the nodes and edges of the graph.
 
-Although we briefly discuss the physical priors of DFT Hamiltonians under atomic bases, realizing it in deep-learning is non-trivial, and we recommend readers refer to the above references for more detailed discussions.
+Although we briefly discuss the physical priors of DFT Hamiltonians under AO basis, realizing it in deep-learning is non-trivial, and we recommend readers refer to the above references for more detailed discussions.
