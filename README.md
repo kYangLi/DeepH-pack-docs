@@ -15,7 +15,7 @@
 
 - [Core Features](#core-features)
 - [Quick Start](#quick-start)
-  - [Get the Software](#get-software)
+  - [Get the Software](#get-the-software)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
 - [Citation](#citation)
@@ -23,13 +23,13 @@
 
 ## Core Features
 
-The [modernized DeepH-pack](https://ticket.deeph-pack.com) is built upon the [solid foundation of its predecessor](https://github.com/mzjb/DeepH-pack) and has been re-engineered with [JAX](https://github.com/jax-ml/jax) and [FLAX](https://github.com/google/flax) to unlock new levels of efficiency and flexibility.
+The [modernized DeepH-pack](https://ticket.deeph-pack.com/?language=en) is built upon the [solid foundation of its predecessor](https://github.com/mzjb/DeepH-pack) and has been re-engineered with [JAX](https://github.com/jax-ml/jax) and [FLAX](https://github.com/google/flax) to unlock new levels of efficiency and flexibility.
 
 ## Quick Start
 
 ### Get the Software
 
-Please visit the [DeepH-pack official website](https://ticket.deeph-pack.com/) to apply for and obtain the software.
+Please visit the [DeepH-pack official website](https://ticket.deeph-pack.com/?language=en) to apply for and obtain the software.
 
 ### Installation
 
@@ -41,7 +41,7 @@ uv pip install ./deepx-1.0.6+light-py3-none-any.whl[gpu] --extra-index-url https
 
 **Parameter explanation:**
 
-- `./deepx-1.0.6+light-py3-none-any.whl` is the Python wheel file available for download from the official [DeepH-pack website](https://ticket.deeph-pack.com/).
+- `./deepx-1.0.6+light-py3-none-any.whl` is the Python wheel file available for download from the official [DeepH-pack website](https://ticket.deeph-pack.com/?language=en).
 
 - The `[gpu]` extra dependency tag indicates the GPU-accelerated version of the package, which is **strongly recommended** for optimal performance. If your system only supports CPU computation, replace `[gpu]` with `[cpu]`.
 

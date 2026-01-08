@@ -1,5 +1,5 @@
 print("\033[1;32mTo use the DeepH JAX version (DeepX), please apply for usage permission at:\033[0m")
-print("\033[4;34m  - https://ticket.deeph-pack.com\033[0m\n")
+print("\033[4;34m  - https://ticket.deeph-pack.com/?language=en\033[0m\n")
 print("\033[1;32mIf you use `DeepH-pack` in your work, please cite the following publications:\033[0m\n")
 print("\033[1;33mThe original framework paper introducing the foundational methodology:\033[0m")
 print("    He Li, Zun Wang, Nianlong Zou, et al. Deep-learning density functional theory Hamiltonian for efficient ab initio electronic-structure calculation. Nat. Comput. Sci. 2, 367 (2022)")
