@@ -2,7 +2,7 @@
 
 ## Deep-learning Hamiltonian method (DeepH)
 
-Deep-learning Hamiltonian method, [start from 2021](https://arxiv.org/abs/2104.03786), is widely recognized as one of the leading packages in deep-learning electronic Hamiltonians. Although designated to model electronic Hamiltonians in solid-state systems, the new version of DeepH-pack also achieves high accuracy in modeling electronic Hamiltonains (or Fock matrix) in molecular systems. After nearly five years of development, DeepH has seen vast in-depth advancements, which could be roughly characterized into five categories:
+Deep-learning Hamiltonian method, [starting from 2021](https://arxiv.org/abs/2104.03786), is widely recognized as one of the leading methods in deep-learning electronic Hamiltonians. Although designated to model electronic Hamiltonians in solid-state systems (periodic crystals), the new version of DeepH-pack also achieves high accuracy in modeling electronic Hamiltonains (or Fock matrix) in molecular systems. After nearly five years of development, DeepH has seen vast in-depth advancements, which could be roughly characterized into five categories:
 
 1. **Latest Software Implementation**
 
