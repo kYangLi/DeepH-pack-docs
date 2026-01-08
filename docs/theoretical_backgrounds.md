@@ -54,7 +54,7 @@ Below we introduce abbreviated notation $\alpha\equiv(plm)$. The DFT Hamiltonian
 
 $$ H_{I\alpha J\beta}=\langle\phi_{I\alpha}|\hat{H}|\phi_{J\beta}\rangle $$
 
-From this definition, two properties of Hamiltonian under this definition will be apparent:
+From this definition, two properties of the Hamiltonian will be apparent:
 
 - Sparsity: since atomic-like basis have a decaying radial part, $H_{I\alpha J\beta}$ vanishes for far-away atom pairs $I,J$
 - Equivariance (Covariance): Upon spatial rotation, the radial part of basis functions are unchanged, while the spherical harmonics part transform under a certain rule. Therefore we have a mathematical foundation for understanding how $H_{I\alpha J\beta}$ transforms under spatial rotation, thereby capable of expressing equivariance (covariance).
