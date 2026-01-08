@@ -7,7 +7,7 @@ DeepH-pack
 
 ----
 
-`DeepH-pack` represents the culmination of **multigenerational research efforts** from the DeepH team at Tsinghua University. This latest iteration of DeepH unites all preceding methodologies into a cohesive, JAX-rewritten toolkit, achieving comprehensive maturity through rigorous long-term testing across all neural modules.
+`DeepH-pack <https://arxiv.org/abs/2601.02938>`_ represents the culmination of **multi-generational research efforts** from the DeepH team at Tsinghua University. This latest iteration of DeepH unites all preceding methodologies into a cohesive, JAX-rewritten package, achieving comprehensive maturity through rigorous long-term testing across all neural modules.
 
 At its core, `DeepH-pack` features a **JAX-based implementation with static computational graphs and advanced algorithms**, delivering exceptional performance in runtime, precision, and memory efficiency. Looking forward, the development roadmap envisions seamless integration of multi-framework backends, evolving into an extensible computational ecosystem for quantum materials modeling while preserving signature accuracy in Hamiltonian construction.
 
