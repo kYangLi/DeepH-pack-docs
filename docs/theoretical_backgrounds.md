@@ -44,11 +44,11 @@ The core concept is as follows: Instead of modeling electronic structure propert
 - DFT Hamiltonian contains abundant underlying data, therefore favorable for data-hungry deep-learning methods.
 - Through representation under atomic bases, DFT Hamiltonian is compatible to several physical priors inspiring physics-informed design of DeepH.
 
-In terms of physical priors of DFT Hamiltonians, we first emphasize that DFT Hamiltonians may be represented under non-orthogonal localized basis sets. The basis function may be denoted:
+In terms of physical priors of DFT Hamiltonians, we first emphasize that DeepH models **DFT Hamiltonians under localized atomic orbital (AO) basis sets**. The basis functions can be denoted by:
 
 $$ \phi_{Iplm}(\textbf{r}-\textbf{R}_I)=R_{Ipl}(|\textbf{r}-\textbf{R}_I|)Y_{lm}(\textbf{r}-\textbf{R}_I) $$
 
-Here, the basis centered at atom $I$ is indexed by three other indices, multiplicity index $p$, angular quantum number $l$, and magnetic quantum number $m$. The basis value at $\textbf{r}$ is determined by its relative position to nucleus $\textbf{R}_I$, and is the product of a radial function and a spherical harmonics.
+Here, the basis centered at atom $I$ is indexed by three other indices, multiplicity index $p$, angular quantum number $l$, and magnetic quantum number $m$. The basis value at $\textbf{r}$ is determined by its relative position to nucleus $\textbf{R}_I$, and is the product of a radial function and a spherical harmonics. Such basis sets are in general non-orthogonal.
 
 Below we introduce abbreviated notation $\alpha\equiv(plm)$. The DFT Hamiltonian matrix elements under localized basis can be formally written as:
 
@@ -56,9 +56,11 @@ $$ H_{I\alpha J\beta}=\langle\phi_{I\alpha}|\hat{H}|\phi_{J\beta}\rangle $$
 
 From this definition, two properties of Hamiltonian under this definition will be apparent:
 
-- Sparsity: since atomic-like basis have a decaying radia part, $H_{I\alpha J\beta}$ vanishes for far-away atom pairs $I,J$
+- Sparsity: since atomic-like basis have a decaying radial part, $H_{I\alpha J\beta}$ vanishes for far-away atom pairs $I,J$
 - Equivariance (Covariance): Upon spatial rotation, the radial part of basis functions are unchanged, while the spherical harmonics part transform under a certain rule. Therefore we have a mathematical foundation for understanding how $H_{I\alpha J\beta}$ transforms under spatial rotation, thereby capable of expressing equivariance (covariance).
 
 In addition, since Hamiltonians are expressed under localized bases, from Walter Kohn's "nearsightedness principle", certain matrix elements could be largely decided by the atomic structure in its vicinity, enabling the $O(N)$-scaling prediction with DeepH.
+
+DeepH models are **graph neural networks** (GNNs). They take atomic structures as input and predict physical quantities. The input structures are treated as graphs with atoms as nodes. Any pair of atoms $i$ and $j$ are connected by directed edges $i \rightarrow j$ and $j \rightarrow i$ if they're sufficiently close (i.e., their atomic orbital basis functions overlap). There are also self-loops $i \rightarrow i$ in the graph. Physical quantities, such as Hamiltonian matrix elements, are interpreted as *features* associated with the nodes and edges of the graph.
 
 Although we briefly discuss the physical priors of DFT Hamiltonians under atomic bases, realizing it in deep-learning is non-trivial, and we recommend readers refer to the above references for more detailed discussions.
