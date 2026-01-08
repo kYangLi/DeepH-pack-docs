@@ -18,24 +18,27 @@ dft
 
 **NOTE:**
 
-- Although the specific values of overlap matrix do not affect the behavior of the neural network model, the actual numerical values become essential for post-processes such as diagonalization to get band structures. In other words, the calculation of overlap matrix is *always* needed for the whole workflow.
-- In most of the *ab initio* programs based on localized orbitals, the overlap matrix can be efficiently calculated by a single non-self-consistent calculation without executing costly SCF cycles or diagonalization. So that the overlap generation process does not affect the overall $O(N)$ time-cost of the inference workflow of DeepH-pack.
+- Although the specific values of overlap matrix do not affect the behavior of the neural network model, the actual numerical values become essential for post-processes such as diagonalization for obtaining band structures. In other words, the calculation of overlap matrix is *always* needed for the complete workflow.
+- In most of the *ab initio* programs based on localized orbitals, the overlap matrix can be efficiently calculated by a single non-self-consistent calculation without executing costly SCF cycles or matrix diagonalization. So that the overlap generation process does not affect the overall $O(N)$ time-cost of the inference workflow of DeepH-pack.
 
 ### Using DeepH-dock to Obtain the Overlap Matrix
 
-[DeepH-dock](https://github.com/kYangLi/DeepH-dock), in conjunction with [HPRO](https://github.com/Xiaoxun-Gong/HPRO), provides a direct and recommended approach for calculating overlap matrix elements of arbitrary materials, given the required basis set files. This integrated method is favored over alternative workflows that involve subsequent code modifications.
+[DeepH-dock](https://github.com/kYangLi/DeepH-dock), in conjunction with [HPRO](https://github.com/Xiaoxun-Gong/HPRO), provides a direct and recommended approach for calculating overlap matrix elements of arbitrary materials, given the required basis set files. This integrated method is favored over alternative workflows that involve subsequent code modifications. Currently, `DeepH-dock` only supports computation of overlap matrices from SIESTA basis files, but support for more DFT data formats will come out soon.
 
-### OpenMX
+### Overlap computation: FHI-aims
+
+By setting `sc_iter_limit = 0` in FHI-aims, users can perform a single-step non-self-consistent calculation that extracts the overlap matrix, while maintaining the fundamental capability that DeepH inference itself requires only `POSCAR` and `info.json` to predict Hamiltonians – with DFT-level computations remaining strictly optional for result verification.
+
+### Overlap computation: SIESTA
+By setting `MaxSCFIterations` as `0` in SIESTA, users can perform a single-step non-self-consistent calculation that extracts the overlap matrix.
+
+### Overlap computation: OpenMX
 
 There is no built-in option to perform an overlap-only calculation by OpenMX, so that one needs to modify the OpenMX source code. Please refer to the [overlap-only-OpenMX](https://github.com/mzjb/overlap-only-OpenMX) repository for details. This modified verson of OpenMX will exit after dumping the overlap-matrix. Then the dumped overlap matrix (in the old data format of DeepH) can be converted to the new data format by [DeepH-dock](https://github.com/kYangLi/DeepH-dock).
 
-### ABACUS
+### Overlap computation: ABACUS
 
 To perform an overlap-only calculation by ABACUS, `calculation get_S` should be specified in the `INPUT` file instead of `calculation scf`, and no further modification of the source code is needed. The program will exit after dumping the `SR.csr` file, and it can be converted to the new data format by [DeepH-dock](https://github.com/kYangLi/DeepH-dock).
-
-### FHI-aims
-
-By setting `sc_iter_limit = 0` in FHI-aims, users can perform a single-step non-self-consistent calculation that extracts the overlap matrix, while maintaining the fundamental capability that DeepH inference itself requires only `POSCAR` and `info.json` to predict Hamiltonians – with DFT-level computations remaining strictly optional for result verification.
 
 ## Inference with DeepH
 
