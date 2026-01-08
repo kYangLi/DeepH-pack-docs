@@ -1,5 +1,38 @@
 # Model Training
 
+To train a model via DeepH-pack, the user needs to prepare:
+1. a configuration file, named as [user_defined_name.toml];
+2. the training data, either in [DeepH-pack's unified DFT data format](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html) (please note that the folder **must** have the name `dft/`):
+```bash
+inputs/
+  |- dft/                # DFT data folder (optional, if graph folder exist)
+    |- <sid>               # Structure ID
+       |- info.json        # Additional information
+       |- POSCAR           # Atomic structures
+       |- overlap.h5       # Overlap matrices of basis in {R}
+       |- (hamiltonian.h5) # Hamiltonian entries in {R}
+       |- (position.h5)
+       |- (charge_density.h5)
+       |- (density_matrix.h5)
+       |- (force.h5)
+    |- ...
+```
+or in the DeepH-pack graph file format (the folder **must** have the name `graph/`):
+```bash
+inputs/
+  |- graph               # Graph folder (optional)
+    |- <GRAPH_NAME>.<GRAPH_TYPE>.memory.pt
+    |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.pt
+    |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.db/
+    |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.info.pt
+
+```
+and run the command
+```bash
+deeph-train build_graph.toml
+```
+to strat training. If the user starts from the unified DFT data format, the graph files will be generated automatically.
+
 ## Build training data Graph files
 
 DeepH models are graph neural networks (GNNs). They take atomic structures as input and predict physical quantities. The input structures are treated as graphs with atoms as nodes. Any pair of atoms $i$ and $j$ are connected by directed edges $i \rightarrow j$ and $j \rightarrow i$ if they're sufficiently close (i.e., their atomic orbital basis functions overlap). There are also self-loops $i \rightarrow i$ in the graph. Physical quantities, such as Hamiltonian matrix elements, are interpreted as *features* associated with the nodes and edges of the graph.
@@ -147,7 +180,7 @@ It will return,
 ---------------------------------------------------------------
 ```
 
-## DeepH model training on FHI-aims processed H2O-5k molecular dataset
+## Example: DeepH model training on FHI-aims processed H2O-5k molecular dataset
 
 With prepared training data in the `inputs/` directory:
 
