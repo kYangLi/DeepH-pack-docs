@@ -87,7 +87,7 @@ inputs/
 
 ```
 
-## Building the Graph sperately
+## Building the Graph separately
 
 Upon initiating a standard DeepH training session, the framework automatically constructs graph files from DFT data stored in the designated `dft/` directory and generates the corresponding graph `dataloader`. Given the CPU-exclusive nature of graph construction and the inherent advantages of graph files in data portability, DeepH-pack also supports decoupled graph generation from the GPU-accelerated training process. If graph files already exist, the training sessions would skip raw DFT data, streamlining the training workflow through graph-based data abstraction.
 
