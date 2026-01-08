@@ -10,6 +10,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
 [![GitHub Issues](https://img.shields.io/github/issues/kYangLi/DeepH-pack-docs.svg)](https://github.com/kYangLi/DeepH-pack-docs/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/kYangLi/DeepH-pack-docs.svg?style=social)](https://github.com/kYangLi/DeepH-pack-docs/stargazers)
 
 *Drive Accuracy and Efficiency with Intelligence.*
 </div>
