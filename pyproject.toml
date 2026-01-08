@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "deepx-pack-docs"
+version = "1.0.0"
+authors = [
+    {name = "Whenhui Duan", email = "duanw@tsinghua.com"},
+    {name = "Yong Xu", email = "yongxu@tsinghua.com"},
+    {name = "All other CMTers", email = "cmter@tsinghua.com"},
+]
+description = "DeepH-pack documentation."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+keywords = [
+    "DeepH-pack", "DeepH", "Physics", "Deep Learning", "Graph Neural Network", "JAX",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python"
+]
+
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "numpy",
+    "h5py",
+    "tqdm",
+    "toml",
+    "sphinx",
+    "sphinx-book-theme",
+    "sphinx-autobuild",
+    "ipykernel",
+    "myst_nb",
+    "nbstripout",
+    "recommonmark",
+    "ipython_genutils",
+    "sphinx-design",
+    "jupytext",
+    "docutils",
+]
+
+
+[project.urls]
+Repository = "https://github.com/kYangLi/DeepH-pack-docs.git"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["deepx*"]
+exclude = ["docs*", "examples*", "tests*",]
+
+[tool.setuptools.package-data]
+"deepx_dock" = [
+    "**/*.toml",
+    "**/*.h5",
+    "**/*.json",
+    "**/*.sh",
+    "**/Makefile",
+]
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
