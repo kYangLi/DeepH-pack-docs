@@ -15,7 +15,7 @@
 *Drive Accuracy and Efficiency with Intelligence.*
 </div>
 
-For the most comprehensive usage documentation, please visit [https://deeph-pack-docs.readthedocs.io](https://deeph-pack-docs.readthedocs.io).
+For the most comprehensive usage documentation, please visit [https://deeph-pack-docs.readthedocs.io](https://deeph-pack-docs.readthedocs.io/en/latest/).
 
 ---
 
