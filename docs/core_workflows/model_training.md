@@ -8,7 +8,7 @@ Technically, graph files are directly constructed from DFT data, demonstrating c
 
 - **Numerical Precision Flexibility:** DeepH-pack supports user-defined 32-bit or 64-bit floating point precision storage, significantly enhancing storage efficiency through optimized data type configurations.
 - **Unified Data Portability:** Leveraging a single-file integrated architecture, graph files should be prioritized over raw fragmented data during cross-server cluster transfers to streamline data mobility.
-- **Generalized Compatibility:** Designed with a universal data structure, the graph file format is not only compatible with the DeepH framework but also theoretically extensible to training workflows of diverse neural network architectures.
+- **Generalized Compatibility:** Designed with a universal data structure, the graph file format is not only compatible with the DeepH framework but also theoretically extensible to training workflows of diverse neural network architectures. Please refer to our open-source interface platform, [`DeepH-dock`](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html), for more details.
 
 In DeepH-pack, the graph folder layout looks like this:
 
