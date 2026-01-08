@@ -1,4 +1,4 @@
-# Theoretical backgrounds
+# Theoretical background
 
 ## Deep-learning Hamiltonian method (DeepH)
 
