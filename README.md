@@ -35,11 +35,13 @@ Please visit the [DeepH-pack official website](https://ticket.deeph-pack.com/?la
 
 ### Installation
 
-First, ensure that [uv](https://docs.astral.sh/uv/) — a fast and versatile Python package manager — is properly installed and configured. Once set up, you can install DeepH-pack using the following command:
+Before installing `DeepH-pack`, ensure that [uv](https://docs.astral.sh/uv/) — a fast and versatile Python package manager — is properly installed and configured, and that your `Python 3.13` environment is set up. If you plan to run DeepH in a GPU-accelerated environment, you must also pre-install `CUDA 12.8` or `12.9`.
 
 ```bash
-uv pip install ./deepx-1.0.6+light-py3-none-any.whl[gpu] --extra-index-url https://download.pytorch.org/whl/cpu
+pip install ./deepx-1.0.6+light-py3-none-any.whl[gpu] --extra-index-url https://download.pytorch.org/whl/cpu
 ```
+
+For step-by-step detailed procedures, please refer to the [documentation](https://deeph-pack-docs.readthedocs.io/installation_and_setup.html).
 
 **Parameter explanation:**
 
@@ -51,7 +53,12 @@ uv pip install ./deepx-1.0.6+light-py3-none-any.whl[gpu] --extra-index-url https
 
 ### Basic Usage
 
-***Further online documentation will be available soon!***
+```bash
+deeph-train train.toml
+deeph-infer infer.toml
+```
+
+For detailed instructions, see [DeepH-pack online documentation](https://deeph-pack-docs.readthedocs.io).
 
 ## Citation
 

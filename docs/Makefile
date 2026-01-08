@@ -11,6 +11,7 @@ SPHINXAUTOBUILD ?= sphinx-autobuild
 SPHINXBUILD ?= sphinx-build
 BUILDDIR = _build
 SOURCEDIR = .
+EXAMPLEDIR = examples
 
 # Default target
 help:
@@ -18,7 +19,7 @@ help:
 	@echo ""
 	@echo "Available targets:"
 	@echo "  install     - Install dependencies for building docs"
-	@echo "  gen-cap     - Generate capabilities documentation"
+	@echo "  gen-cap     - Generate examples documentation"
 	@echo "  build       - Build documentation (static)"
 	@echo "  livehtml    - Build and serve with live reload"
 	@echo "  clean       - Remove build directory"
@@ -41,11 +42,11 @@ install:
 	uv pip install ..[docs]
 	@echo "Done!"
 
-# Generate capabilities
+# Generate examples
 gen-cap:
-	@echo "Generating capabilities documentation..."
-	python gen_capabilities.py
-	@echo "Capabilities generated!"
+	@echo "Generating examples documentation..."
+	python gen_examples.py
+	@echo "Examples generated!"
 
 # Build static documentation
 build: gen-cap
@@ -73,6 +74,7 @@ serve:
 clean:
 	@echo "Cleaning build directory..."
 	rm -rf "$(BUILDDIR)"
+	rm -rf "$(EXAMPLEDIR)"
 	@echo "Cleaned!"
 
 # Build for deployment

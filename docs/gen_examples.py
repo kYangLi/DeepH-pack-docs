@@ -47,10 +47,10 @@ def generate_capability_rst(
     return str(rst_relative_path), title
 
 def generate_capabilities_index(capabilities_dir, entries):
-    content = """Capabilities
-============
+    content = """Examples
+========
 
-Welcome to the DeepH-dock capabilities library. It contains various use cases designed to help you get started quickly.
+Welcome to the DeepH-dock examples library. It contains various use cases designed to help you get started quickly.
 
 .. toctree::
     :maxdepth: 1
@@ -73,7 +73,7 @@ Welcome to the DeepH-dock capabilities library. It contains various use cases de
 def scan_examples_and_generate_capabilities():
     docs_dir = Path('.')
     examples_dir = docs_dir / '..' / 'examples'
-    capabilities_dir = docs_dir / 'capabilities'
+    capabilities_dir = docs_dir / 'examples'
     
     if capabilities_dir.is_dir():
         shutil.rmtree(capabilities_dir)
@@ -101,7 +101,7 @@ def scan_examples_and_generate_capabilities():
         generate_capabilities_index(capabilities_dir, entries)
         
         print(f'\nComplete! Dealing with {len(entries)} Notebooks.')
-        print(f'Generated capabilities:')
+        print(f'Generated examples:')
         for rst_path, title in entries:
             print(f'  {rst_path} -> {title}')
     else:
