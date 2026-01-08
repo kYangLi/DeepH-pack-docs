@@ -20,18 +20,16 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Path setup --------------------------------------------------------------
-
 # If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
+#   add these directories to sys.path here. If the directory is relative to the
+#   documentation root, use os.path.abspath to make it absolute, 
+#   like shown here.
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-# patch sphinx
+# Patch sphinx
 # -- Project information -----------------------------------------------------
-
 project = 'DeepH-pack'
 copyright = '2021, The DeepH team'
 author = 'The DeepH team'
@@ -40,8 +38,8 @@ author = 'The DeepH team'
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
+#   extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+#   ones.
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
@@ -59,15 +57,15 @@ extensions = [
 templates_path = []
 
 # List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
+#   directories to ignore when looking for source files.
+#   This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build',]
 
 # The suffix(es) of source filenames.
-# Note: important to list ipynb before md here: we have both md and ipynb
-# copies of each notebook, and myst will choose which to convert based on
-# the order in the source_suffix list. Notebooks which are not executed have
-# outputs stored in ipynb but not in md, so we must convert the ipynb.
+#   Note: important to list ipynb before md here: we have both md and ipynb
+#   copies of each notebook, and myst will choose which to convert based on
+#   the order in the source_suffix list. Notebooks which are not executed have
+#   outputs stored in ipynb but not in md, so we must convert the ipynb.
 source_suffix = ['.rst', '.ipynb', '.md']
 
 autosummary_generate = True
@@ -79,16 +77,14 @@ autodoc_typehints = 'none'
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-# html_theme = 'pydata_sphinx_theme'
+# The theme to use for HTML and HTML Help pages.  See the documentation for a 
+#   list of builtin themes.
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
 html_css_files = ['css/deepx_theme.css']
 
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
+# The name of an image file (relative to this directory) to place at the top 
+#   of the sidebar.
 html_logo = './_image/logo-small.svg'
 html_favicon = './_image/logo-fav.svg'
 
@@ -96,38 +92,35 @@ html_favicon = './_image/logo-fav.svg'
 html_title = ''
 
 # Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named 'default.css' will overwrite the builtin 'default.css'.
-
+#   relative to this directory. They are copied after the builtin static files,
+#   so a file named 'default.css' will overwrite the builtin 'default.css'.
 html_theme_options = {
     'repository_url': 'https://github.com/kYangLi/DeepH-pack-docs',
-    'use_repository_button': True,  # add a 'link to repository' button
-    'use_issues_button': True,  # add an 'Open an Issue' button
+    'use_repository_button': True,
+    'use_issues_button': True,
     'show_prev_next': True,
     'show_navbar_depth': 1,
 }
 
 # -- Options for myst ----------------------------------------------
-# uncomment line below to avoid running notebooks during development
+# Uncomment line below to avoid running notebooks during development
 nb_execution_mode = 'off'
 
 # Notebook cell execution timeout; defaults to 30.
 nb_execution_timeout = 30
 
-# List of patterns, relative to source directory, that match notebook
-# files that will not be executed.
+# List of patterns, relative to source directory, that match notebook files that will not be executed.
 myst_enable_extensions = [
-    'dollarmath',
+    "dollarmath",
 ]
 # nb_execution_excludepatterns = []
 
-# raise exceptions on execution so CI can catch errors
+# Raise exceptions on execution so CI can catch errors
 # nb_execution_allow_errors = False
 # nb_execution_raise_on_error = True
 
 # -- Extension configuration -------------------------------------------------
 
-# Tell sphinx-autodoc-typehints to generate stub parameter annotations including
-# types, even if the parameters aren't explicitly documented.
+# Tell sphinx-autodoc-typehints to generate stub parameter annotations including types, even if the parameters aren't explicitly documented.
 always_document_param_types = True
 autosectionlabel_prefix_document = True
