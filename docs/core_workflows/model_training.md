@@ -34,14 +34,11 @@ deeph-train build_graph.toml
 to strat training. If the user starts from the unified DFT data format, the graph files will be generated automatically.
 
 ## Build training data Graph files
-
-DeepH models are graph neural networks (GNNs). They take atomic structures as input and predict physical quantities. The input structures are treated as graphs with atoms as nodes. Any pair of atoms $i$ and $j$ are connected by directed edges $i \rightarrow j$ and $j \rightarrow i$ if they're sufficiently close (i.e., their atomic orbital basis functions overlap). There are also self-loops $i \rightarrow i$ in the graph. Physical quantities, such as Hamiltonian matrix elements, are interpreted as *features* associated with the nodes and edges of the graph.
-
-Technically, graph files are directly constructed from DFT data, demonstrating complete data equivalence with the DeepH training process. Compared to traditional folder-based decentralized DFT data storage methods, the graph file system exhibits multiple technical advantages:
+As a GNN-based framework, DeepH-pack operates on graph files. Constructing these graph files is an essential step in the workflow, which can be performed either together with the training routine or as a separate pre-processing task. Technically, graph files are converted directly from DFT data. Compared to traditional storage methods involving scattered folders of raw data, the graph file system offers several key advantages:
 
 - **Numerical Precision Flexibility:** DeepH-pack supports both 32-bit and 64-bit floating-point precision, enabling users to select the appropriate setting based on their device's memory capacity.
-- **Unified Data Portability:** Leveraging a single-file integrated architecture, graph files should be prioritized over raw fragmented data during cross-server cluster transfers to streamline data mobility.
-- **Generalized Compatibility:** Designed with a universal data structure, the graph file format is not only compatible with the DeepH framework but also theoretically extensible to training workflows of diverse neural network architectures. Please refer to our open-source interface platform, [`DeepH-dock`](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html), for more details.
+- **Unified Data Portability:** Packaged as single integrated files, graph files are significantly easier to transfer between servers or clusters than fragmented raw data folders.
+- **Generalized Compatibility:** With its universal data structure, the graph file format is compatible not only with the DeepH framework but also potentially extensible to other neural network architectures. For more details, please refer to our open-source data interface platform [`DeepH-dock`](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html).
 
 In DeepH-pack, the graph folder layout looks like this:
 
@@ -117,7 +114,7 @@ parallel_num = -1         # Parallel processes during build graph
 only_save_graph = true    # A task for generate and save graph only
 ```
 
-You can then use the following command to build data graph file:
+You can then use the following command to build data graph file without starting the training process:
 
 ``` bash
 deeph-train build_graph.toml
