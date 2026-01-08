@@ -6,7 +6,7 @@ DeepH models are graph neural networks (GNNs). They take atomic structures as in
 
 Technically, graph files are directly constructed from DFT data, demonstrating complete data equivalence with the DeepH training process. Compared to traditional folder-based decentralized DFT data storage methods, the graph file system exhibits multiple technical advantages:
 
-- **Numerical Precision Flexibility:** DeepH-pack supports user-defined 32-bit or 64-bit floating point precision storage, significantly enhancing storage efficiency through optimized data type configurations.
+- **Numerical Precision Flexibility:** DeepH-pack supports both 32-bit and 64-bit floating-point precision, enabling users to select the appropriate setting based on their device's memory capacity.
 - **Unified Data Portability:** Leveraging a single-file integrated architecture, graph files should be prioritized over raw fragmented data during cross-server cluster transfers to streamline data mobility.
 - **Generalized Compatibility:** Designed with a universal data structure, the graph file format is not only compatible with the DeepH framework but also theoretically extensible to training workflows of diverse neural network architectures. Please refer to our open-source interface platform, [`DeepH-dock`](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html), for more details.
 
