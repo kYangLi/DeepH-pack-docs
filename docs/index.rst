@@ -135,7 +135,7 @@ If you use ``DeepH-pack`` in your work, please cite the following publications.
     :hidden:
     :maxdepth: 1
     
-    theoretical_backgrounds
+    theoretical_background
     getting_the_code
     installation_and_setup
     core_workflows/index
