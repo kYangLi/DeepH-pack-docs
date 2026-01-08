@@ -50,7 +50,7 @@ graph/
   |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.info.pt
 ```
 
-The root directory for the raw DFT data must be named as `graph/`, with all graph files residing within this directory.
+The root directory for the raw DFT data **must be named as `graph/`**, with all graph files residing within this directory.
 
 DeepH-pack currently supports two distinct storage modes for graph files:
 
