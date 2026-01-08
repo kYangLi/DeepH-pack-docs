@@ -242,7 +242,7 @@ Use this value to repalace the "fermi_energy_eV" in `info.json` and you are read
 - Preserving raw data integrity is paramount in neural network training, as modifying source datasets carries inherent risks – we therefore implement deliberate barriers against accidental misuse.
 - We encourage users to implement simple functionalities through Python scripting, analogous to creating Bash scripts for data extraction. DeepH-pack prioritizes providing a flexible computational framework over delivering an all-in-one black-box program.
 
-## Plotting energy bands
+## Plotting the band structure
 
 In order to obtain the band structures, an additional file `K_PATH` is required during the band structure calculation. This file specifies the high-symmetry path for the band structure and can be written manually. For layered $\text{MoS}_2$ the path can be:
 
