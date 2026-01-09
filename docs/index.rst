@@ -143,3 +143,4 @@ If you use ``DeepH-pack`` in your work, please cite the following publications.
     configuration_options/index
     examples/index
     citation_and_community
+    frequently_asked_questions
