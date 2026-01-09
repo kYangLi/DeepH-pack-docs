@@ -30,6 +30,10 @@ No, not currently. The [open-source deeph-pack-docs project](https://github.com/
 
 Typically 1-2 business days.
 
+### I see that my application has been approved and an email was sent, but I haven't received anything in my inbox
+
+Please first double-check that the email address you provided is correct and ensure the email hasn't been filtered into your spam/junk folder. If both are confirmed to be correct, the email was likely intercepted by your institution/school's network center, as it contains download links. We recommend contacting your IT or network administration for assistance. If you have any further questions, feel free to reach out to us at `deeph-pack@outlook.com`.
+
 ### What CUDA and Python versions does this version support?
 
 For `deepx-1.0.6+light`, Python `3.13`, `CUDA 12.8`, or `12.9`.
@@ -46,10 +50,6 @@ The reason is that the last version of glibc supported by CentOS 7 is too old (v
 ### Does the new DeepH-pack also have requirements for underlying libraries? I always get errors when installing `manylinux_2_17_x86_64`
 
 Yes, the reason and solutions are the same as the previous question.
-
-### I see that my application has been approved and an email was sent, but I haven't received anything in my inbox
-
-Please first double-check that the email address you provided is correct and ensure the email hasn't been filtered into your spam/junk folder. If both are confirmed to be correct, the email was likely intercepted by your institution/school's network center, as it contains download links. We recommend contacting your IT or network administration for assistance. If you have any further questions, feel free to reach out to us at `deeph-pack@outlook.com`.
 
 ## Functionality & Usage
 
