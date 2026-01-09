@@ -33,6 +33,7 @@ The Deep-learning Hamiltonian (DeepH) method, [starting from 2021](https://arxiv
 It's worth emphasizing that, despite lasting development, DeepH is still in its primary stage, especially in terms of applications. We're currently exploring several exciting DeepH application scenarios, with some of the results may come up lately.
 
 ## Deep-learning electronic structures with DeepH
+
 A simplified schematic of the DeepH method is demonstrated as follows:
 ![image](_image/DeepH-schematic.png)
 [Source: arXiv:2601.02938 [cond-mat.mtrl-sci]](https://arxiv.org/abs/2601.02938)

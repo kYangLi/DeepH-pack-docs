@@ -1,8 +1,10 @@
 # Model Training
 
 To train a model via DeepH-pack, the user needs to prepare:
+
 1. a configuration file, named as [user_defined_name.toml];
 2. the training data, either in [DeepH-pack's unified DFT data format](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html) (please note that the folder **must** have the name `dft/`):
+
 ```bash
 inputs/
   |- dft/                # DFT data folder (optional, if graph folder exist)
@@ -17,7 +19,9 @@ inputs/
        |- (force.h5)
     |- ...
 ```
+
 or in the DeepH-pack graph file format (the folder **must** have the name `graph/`):
+
 ```bash
 inputs/
   |- graph               # Graph folder (optional)
@@ -27,13 +31,17 @@ inputs/
     |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.info.pt
 
 ```
+
 and run the command
+
 ```bash
 deeph-train build_graph.toml
 ```
+
 to strat training. If the user starts from the unified DFT data format, the graph files will be generated automatically.
 
 ## Build training data Graph files
+
 As a GNN-based framework, DeepH-pack operates on graph files. Constructing these graph files is an essential step in the workflow, which can be performed either together with the training routine or as a separate pre-processing task. Technically, graph files are converted directly from DFT data. Compared to traditional storage methods involving scattered folders of raw data, the graph file system offers several key advantages:
 
 - **Numerical Precision Flexibility:** DeepH-pack supports both 32-bit and 64-bit floating-point precision, enabling users to select the appropriate setting based on their device's memory capacity.
