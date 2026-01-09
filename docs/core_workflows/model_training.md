@@ -2,7 +2,7 @@
 
 To train a model via DeepH-pack, the user needs to prepare:
 
-1. a configuration file, named as [user_defined_name.toml];
+1. a configuration file, named as `<user_defined_name>.toml`, such as `my_train.toml`;
 2. the training data, either in [DeepH-pack's unified DFT data format](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html) (please note that the folder **must** have the name `dft/`):
 
 ```bash
@@ -35,7 +35,7 @@ inputs/
 and run the command
 
 ```bash
-deeph-train build_graph.toml
+deeph-train my_train.toml
 ```
 
 to strat training. If the user starts from the unified DFT data format, the graph files will be generated automatically.
