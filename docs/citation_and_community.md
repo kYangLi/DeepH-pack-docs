@@ -1,4 +1,7 @@
-# Citation
+<!-- markdownlint-disable MD033 -->
+# Citation & Community
+
+## Citation
 
 If you use `DeepH-pack` in your work, please cite the following publications.
 
@@ -30,7 +33,26 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 }
 ```
 
----
+## Join the Community
+
+### 🎤 DeepH-pack Global User Conference
+
+- **2025 Conference Materials**: [Workshop Tutorials & Case Studies](https://deeph-workshop-tutorial.readthedocs.io)
+
+<div align="center" style="margin: 20px 0;">
+
+<img src="./_image/User_Conference_2025.jpg" alt="DeepH-pack Logo" width="500">
+
+**2025 User Conference Successfully Concluded!**  
+*Global materials scientists gathered to explore computational frontiers*
+</div>
+
+- **Upcoming Events**:  
+  <!-- [2026 Conference Announcement Timeline](...) -->
+  2026 Conference Announcement Timeline (Coming Soon...)
+- **Community Channels**:
+  - [GitHub Issue](https://github.com/kYangLi/DeepH-pack-docs/issues)
+  <!-- - Slack/Mattermost -->
 
 ## Final Notes
 

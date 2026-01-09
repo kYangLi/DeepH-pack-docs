@@ -11,7 +11,7 @@ DeepH-pack
 
 At its core, `DeepH-pack` features a **JAX-based implementation with static computational graphs and advanced algorithms**, delivering exceptional performance in runtime, precision, and memory efficiency. Looking forward, the development roadmap envisions seamless integration of multi-framework backends, evolving into an extensible computational ecosystem for quantum materials modeling while preserving signature accuracy in Hamiltonian construction.
 
-The platform is dedicated to constructing an expanded and more comprehensive toolkit for materials computation and predictive modeling, warmly welcoming community feedback. Beyond this documentation, we have established permanent online resources including tutorials and practical cases from the inaugural 2025 DeepH-pack Global User Conference, available at https://deeph-workshop-tutorial.readthedocs.io for continuous learning.
+The platform is dedicated to constructing an expanded and more comprehensive toolkit for materials computation and predictive modeling, warmly welcoming community feedback. We have open-sourced the core data interfaces and standardization modules from DeepH calculations, establishing the `DeepH-dock <https://github.com/kYangLi/DeepH-dock>`_ project. This initiative delivers seamless interoperability with mainstream DFT software packages, while the codebase integrates community-contributed enhancements at the architecture level.
 
 Features
 ^^^^^^^^
@@ -142,4 +142,4 @@ If you use ``DeepH-pack`` in your work, please cite the following publications.
     universal_material_model
     configuration_options/index
     examples/index
-    citation
+    citation_and_community
