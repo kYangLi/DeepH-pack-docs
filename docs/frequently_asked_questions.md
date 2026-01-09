@@ -14,6 +14,8 @@ The name `deepx` was chosen for two primary reasons:
 
 - The name also hints at the expanded scope of the current DeepH-pack. While the original DeepH focused primarily on Hamiltonian prediction, the new architecture supports a broader range of electronic structure calculations and is designed to be extensible for future functionalities beyond DFT Hamiltonian prediction.
 
+Regardless, our package is still named *DeepH-pack*.
+
 ### When will features like DFPT mentioned in the paper be released?
 
 These are all on the DeepH team's timeline. The DeepH team is also collaborating with top technical teams such as [FHI-aims](https://www.fhi-aims.org/), [ABACUS](https://abacus.ustc.edu.cn/main.htm), and [EPW](https://epw-code.org/) to develop corresponding functionalities. Please stay tuned for updates.
