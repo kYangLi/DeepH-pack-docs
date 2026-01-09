@@ -47,7 +47,7 @@ The reason is that the last version of glibc supported by CentOS 7 is too old (v
 3. **Reinstall the operating system.** This will break your current production environment but will provide longer and more stable support for future software.
 4. **Consider using the CPU-only version** if your computational needs allow, as it may have fewer dependencies.
 
-### Does the new DeepH-pack also have requirements for underlying libraries? I always get errors when installing `manylinux_2_17_x86_64`
+### Does the new DeepH-pack also have requirements for underlying libraries? I always get errors when installing on `manylinux_2_17_x86_64`
 
 Yes, the reason and solutions are the same as the previous question.
 
