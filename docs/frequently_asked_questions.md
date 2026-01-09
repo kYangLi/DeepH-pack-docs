@@ -47,6 +47,10 @@ The reason is that the last version of glibc supported by CentOS 7 is too old (v
 
 Yes, the reason and solutions are the same as the previous question.
 
+### I see that my application has been approved and an email was sent, but I haven't received anything in my inbox
+
+Please first double-check that the email address you provided is correct and ensure the email hasn't been filtered into your spam/junk folder. If both are confirmed to be correct, the email was likely intercepted by your institution/school's network center, as it contains download links. We recommend contacting your IT or network administration for assistance. If you have any further questions, feel free to reach out to us at `deeph-pack@outlook.com`.
+
 ## Functionality & Usage
 
 ### I cannot find the data preprocessing conversion interface in the new version of DeepH. Where is it?
