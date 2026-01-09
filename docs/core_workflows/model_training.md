@@ -136,7 +136,7 @@ uv pip install ./deepx-1.0.6+light-py3-none-any.whl[cpu] --extra-index-url https
 
 ## Inspect the DFT dataset and Graph set
 
-Upon completion of data preparation, a critical pre-computation step remains: comprehensive dataset analysis. Thorough understanding of dataset characteristics enables optimized hyperparameter configuration and accelerated model convergence. To facilitate this, we provide integrated utility tools within the `deepx` package. These analytical tools become automatically accessible in your command-line interface after package installation.
+Upon completion of data preparation, *an optional pre-computation step* remains: comprehensive dataset analysis. Thorough understanding of dataset characteristics enables optimized hyperparameter configuration and accelerated model convergence. To facilitate this, we provide integrated utility tools within the `deepx` package. These analytical tools become automatically accessible in your command-line interface after package installation.
 
 The `deepx-1.0.6+light` package includes the `deeph-Tool-InspectDataset` command for analyzing raw DFT data features.
 
