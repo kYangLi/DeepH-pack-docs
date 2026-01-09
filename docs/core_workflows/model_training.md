@@ -1,5 +1,7 @@
 # Model Training
 
+## Overview
+
 To train a model via DeepH-pack, the user needs to prepare:
 
 1. a configuration file, named as `<user_defined_name>.toml`, such as `my_train.toml`;
