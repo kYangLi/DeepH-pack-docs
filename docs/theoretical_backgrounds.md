@@ -33,9 +33,8 @@ Deep-learning Hamiltonian method, [starting from 2021](https://arxiv.org/abs/210
 It's worth emphasizing that, despite lasting development, DeepH is still in its primary stage, especially in terms of applications. We're currently exploring several exciting DeepH application scenarios, with some of the results may come up lately.
 
 ## Deep-learning electronic structures with DeepH
-
-A naive illustration of the DeepH workflow is demonstrated as follows:
-![image](_image/DeepH-workflow.png)
+A simplified schematic of the DeepH method is demonstrated as follows:
+![image](_image/DeepH-schematic.png)
 [Source: arXiv:2601.02938 [cond-mat.mtrl-sci]](https://arxiv.org/abs/2601.02938)
 
 The core concept is as follows: Instead of modeling electronic structure properties such as band gap, electric conductivity, etc. directly, we use DeepH to model the DFT Hamiltonian. Although the requirement for postprocessing introduces additional burden to the workflow, the advantages of modeling Hamiltonian is apparent, to name a few:
