@@ -52,3 +52,7 @@ Yes, the reason and solutions are the same as the previous question.
 ### I cannot find the data preprocessing conversion interface in the new version of DeepH. Where is it?
 
 This functionality has been integrated into the open-source project [**DeepH-dock**](https://github.com/kYangLi/DeepH-dock), and we welcome contributions from the community to its development.
+
+### Does the current version support spin-orbit coupling (SOC) calculations?
+
+Yes, it does. After using DeepH-dock to [convert the raw DFT SOC data](https://deeph-dock.readthedocs.io/en/latest/capabilities/index.html) in [the DeepH format](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html#spin-polarized-systems), DeepH-pack will automatically recognize and train on it.
