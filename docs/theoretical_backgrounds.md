@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 # Theoretical background
 
 ## Deep-learning Hamiltonian method (DeepH)
@@ -7,6 +8,10 @@ The Deep-learning Hamiltonian (DeepH) method, [starting from 2021](https://arxiv
 1. **Latest Software Implementation**
 
     - [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
+
+    | ![image](_image/H_is_all_you_need.png) |
+    | :------ |
+    | **Hamiltonian is all you need!**<br>*The Hamiltonian matrix serves as the fundamental quantity that encapsulates the complete electronic structure information. Once the Hamiltonian is obtained through deep learning prediction, all other physical properties typically computed by density functional theory (DFT)—including band structures, density of states, optical conductivity, and transport coefficients—can be derived via efficient non-self-consistent calculations, bypassing the computationally expensive self-consistent field iterations.* |
 
 2. **Architecture advancements**
 
