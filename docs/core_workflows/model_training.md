@@ -40,7 +40,7 @@ deeph-train my_train.toml
 
 to strat training. If the user starts from the unified DFT data format, the graph files will be generated automatically.
 
-## Build training data Graph files
+## The training data Graph files
 
 As a GNN-based framework, DeepH-pack operates on graph files. Constructing these graph files is an essential step in the workflow, which can be performed either together with the training routine or as a separate pre-processing task. Technically, graph files are converted directly from DFT data. Compared to traditional storage methods involving scattered folders of raw data, the graph file system offers several key advantages:
 
@@ -95,9 +95,9 @@ inputs/
 
 ```
 
-## Building the Graph separately
+## Building the Graph files separately
 
-Upon initiating a standard DeepH training session, the framework automatically constructs graph files from DFT data stored in the designated `dft/` directory and generates the corresponding graph `dataloader`. Given the CPU-exclusive nature of graph construction and the inherent advantages of graph files in data portability, DeepH-pack also supports decoupled graph generation from the GPU-accelerated training process. If graph files already exist, the training sessions would skip raw DFT data, streamlining the training workflow through graph-based data abstraction.
+Upon initiating a standard DeepH training session, the framework automatically constructs graph files from DFT data stored in the designated `dft/` directory and generates the corresponding graph `dataloader`. However, given the CPU-exclusive nature of graph construction and the inherent advantages of graph files in data portability, DeepH-pack also supports decoupled graph generation from the GPU-accelerated training process. And, if graph files already exist, the training sessions would skip raw DFT data, streamlining the training workflow through graph-based data abstraction.
 
 `build_graph.toml`:
 
