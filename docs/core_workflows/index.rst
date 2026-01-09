@@ -2,7 +2,7 @@ Core Workflows
 ^^^^^^^^^^^^^^
 A naive illustration of the DeepH-pack workflow is demonstrated as follows:
 
-.. image:: _image/DeepH-workflow.png
+.. image:: ../_image/DeepH-workflow.png
 
 `Source: arXiv:2601.02938 [cond-mat.mtrl-sci] <https://arxiv.org/abs/2601.02938>`_
 
