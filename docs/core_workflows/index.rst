@@ -1,5 +1,10 @@
 Core Workflows
 ^^^^^^^^^^^^^^
+A naive illustration of the DeepH-pack workflow is demonstrated as follows:
+
+.. image::_image/DeepH-workflow.png
+
+`Source: arXiv:2601.02938 [cond-mat.mtrl-sci]<https://arxiv.org/abs/2601.02938>`_
 
 DeepH-pack enables the prediction of ab initio Hamiltonians using deep neural networks. The standard workflow consists of three sequential stages:
 
