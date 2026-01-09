@@ -44,35 +44,10 @@ to strat training. If the user starts from the unified DFT data format, the grap
 
 ## The raw training data and Graph files
 
-As a GNN-based framework, DeepH-pack operates on graph files. Constructing these graph files is an essential step in the workflow, which can be performed either together with the training routine or as a separate pre-processing task. Technically, graph files are converted directly from DFT data. Compared to traditional storage methods involving scattered folders of raw data, the graph file system offers several key advantages:
+**To commence DeepH training**:
 
-- **Numerical Precision Flexibility:** DeepH-pack supports both 32-bit and 64-bit floating-point precision, enabling users to select the appropriate setting based on their device's memory capacity.
-- **Unified Data Portability:** Packaged as single integrated files, graph files are significantly easier to transfer between servers or clusters than fragmented raw data folders.
-- **Generalized Compatibility:** With its universal data structure, the graph file format is compatible not only with the DeepH framework but also potentially extensible to other neural network architectures. For more details, please refer to our open-source data interface platform [`DeepH-dock`](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html).
-
-In DeepH-pack, the graph folder layout looks like this:
-
-```bash
-graph/
-  |- <GRAPH_NAME>.<GRAPH_TYPE>.memory.pt
-  |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.pt
-  |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.db/
-  |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.info.pt
-```
-
-The root directory for the raw DFT data **must be named as `graph/`**, with all graph files residing within this directory.
-
-DeepH-pack currently supports two distinct storage modes for graph files:
-
-- The `memory` mode. It pre-loads the entire graph file into node memory during DeepH training initialization, prioritizing operational efficiency for datasets compatible with available memory resources.
-- The `disk` mode. It employs on-demand data streaming through integrated database-hardware storage solutions, specifically designed for over-sized graph files exceeding node memory capacity (e.g., >10 TiB).
-
-This dual-mode architecture ensures memory-agnostic training workflows by dynamically adapting to data scales, where disk mode enables real-time access during computation while bypassing full memory occupancy, thereby maintaining system flexibility across varying computational constraints.
-
-To initiate DeepH training:
-
-- Either prepare the DFT directory (enabling automatic graph construction at training start)
-- Or provide pre-built graph files (transferred to the GPU cluster from external sources).
+- Either prepare and provide the DFT raw training data directory `dft\`, which allows for automatic graph construction at the start of training. For further details, please refer to our open‑source data interface platform [`DeepH‑dock`](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html).
+- Or supply pre‑built graph files `graph\` (e.g., transferred from external sources to the GPU cluster).
 
 Both approaches are fully supported by DeepH-pack.
 
@@ -96,6 +71,31 @@ inputs/
     |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.info.pt
 
 ```
+
+As a GNN-based framework, DeepH-pack operates on graph files. Constructing these graph files is an essential step in the workflow, which can be performed either together with the training routine or as a separate pre-processing task. Technically, graph files are converted directly from DFT data. Compared to traditional storage methods involving scattered folders of raw data, the graph file system offers several key advantages:
+
+- **Numerical Precision Flexibility:** DeepH-pack supports both 32-bit and 64-bit floating-point precision, enabling users to select the appropriate setting based on their device's memory capacity.
+- **Unified Data Portability:** Packaged as single integrated files, graph files are significantly easier to transfer between servers or clusters than fragmented raw data folders.
+- **Generalized Compatibility:** With its universal data structure, the graph file format is compatible not only with the DeepH framework but also potentially extensible to other neural network architectures.
+
+In DeepH-pack, the graph folder layout looks like this:
+
+```bash
+graph/
+  |- <GRAPH_NAME>.<GRAPH_TYPE>.memory.pt
+  |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.pt
+  |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.db/
+  |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.info.pt
+```
+
+The root directory for the raw DFT data **must be named as `graph/`**, with all graph files residing within this directory.
+
+DeepH-pack currently supports two distinct storage modes for graph files:
+
+- The `memory` mode. It pre-loads the entire graph file into node memory during DeepH training initialization, prioritizing operational efficiency for datasets compatible with available memory resources.
+- The `disk` mode. It employs on-demand data streaming through integrated database-hardware storage solutions, specifically designed for over-sized graph files exceeding node memory capacity (e.g., >10 TiB).
+
+This dual-mode architecture ensures memory-agnostic training workflows by dynamically adapting to data scales, where disk mode enables real-time access during computation while bypassing full memory occupancy, thereby maintaining system flexibility across varying computational constraints.
 
 ### Building the Graph files separately (Optional)
 
