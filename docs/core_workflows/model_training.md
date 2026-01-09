@@ -40,7 +40,7 @@ deeph-train my_train.toml
 
 to strat training. If the user starts from the unified DFT data format, the graph files will be generated automatically.
 
-## The training data Graph files
+## The raw training data and Graph files
 
 As a GNN-based framework, DeepH-pack operates on graph files. Constructing these graph files is an essential step in the workflow, which can be performed either together with the training routine or as a separate pre-processing task. Technically, graph files are converted directly from DFT data. Compared to traditional storage methods involving scattered folders of raw data, the graph file system offers several key advantages:
 
@@ -95,7 +95,7 @@ inputs/
 
 ```
 
-## Building the Graph files separately
+### Building the Graph files separately (Optional)
 
 Upon initiating a standard DeepH training session, the framework automatically constructs graph files from DFT data stored in the designated `dft/` directory and generates the corresponding graph `dataloader`. However, given the CPU-exclusive nature of graph construction and the inherent advantages of graph files in data portability, DeepH-pack also supports decoupled graph generation from the GPU-accelerated training process. And, if graph files already exist, the training sessions would skip raw DFT data, streamlining the training workflow through graph-based data abstraction.
 
@@ -134,7 +134,7 @@ deeph-train build_graph.toml
 uv pip install ./deepx-1.0.6+light-py3-none-any.whl[cpu] --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
-## Inspect the DFT dataset and Graph set
+### Inspect the DFT dataset and Graph set (Optional)
 
 Upon completion of data preparation, *an optional pre-computation step* remains: comprehensive dataset analysis. Thorough understanding of dataset characteristics enables optimized hyperparameter configuration and accelerated model convergence. To facilitate this, we provide integrated utility tools within the `deepx` package. These analytical tools become automatically accessible in your command-line interface after package installation.
 
