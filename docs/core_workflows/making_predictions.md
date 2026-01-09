@@ -30,6 +30,7 @@ dft
 By setting `sc_iter_limit = 0` in FHI-aims, users can perform a single-step non-self-consistent calculation that extracts the overlap matrix, while maintaining the fundamental capability that DeepH inference itself requires only `POSCAR` and `info.json` to predict Hamiltonians – with DFT-level computations remaining strictly optional for result verification.
 
 ### Overlap computation: SIESTA
+
 By setting `MaxSCFIterations` as `0` in SIESTA, users can perform a single-step non-self-consistent calculation that extracts the overlap matrix.
 
 ### Overlap computation: OpenMX
