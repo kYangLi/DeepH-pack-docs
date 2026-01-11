@@ -36,7 +36,7 @@ Please first double-check that the email address you provided is correct and ens
 
 ### What CUDA and Python versions does this version support?
 
-For `deepx-1.0.6+light`, Python `3.13`, `CUDA 12.8` or `12.9`.
+For `deepx-1.0.6+light`, Python `3.13`, CUDA `12.8` or `12.9`.
 
 ### When installing on CentOS 7, I encountered installation failures. What is the reason?
 
