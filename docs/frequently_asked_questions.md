@@ -4,7 +4,7 @@
 
 ### What is the difference between this software and the DeepH-pack already published on GitHub?
 
-[This software](https://github.com/kYangLi/DeepH-pack-docs) is a [JAX-based](https://github.com/jax-ml/jax) refactored version of the DeepH code, designed to provide users with a smoother and more streamlined experience. The DeepH team has spent over 2 years refactoring all modules and code of DeepH, integrating all previous achievements into a single software package. The new architecture aims to enhance computational efficiency, improve code maintainability, and offer a more user-friendly interface. At the same time, we extend our sincere gratitude to all developers of historical versions and the initiators of the DeepH project.
+[This software](https://github.com/kYangLi/DeepH-pack-docs) is a [JAX-based](https://github.com/jax-ml/jax) refactored version of the DeepH code, designed to provide users with a smoother and more streamlined experience. The DeepH team has spent over 2 years refactoring all modules and code of DeepH, integrating all previous achievements into a single software package. The new architecture aims to enhance computational efficiency and user-friendliness, improve code maintainability, and offer a more comprehensive interface. At the same time, we extend our sincere gratitude to all developers of historical versions and the initiators of the DeepH project.
 
 ### Why is this package called `deepx`? It's a bit confusing to me
 
