@@ -15,7 +15,7 @@
 *Drive Accuracy and Efficiency with Intelligence.*
 </div>
 
-For the most comprehensive usage documentation, please visit [https://deeph-pack-docs.readthedocs.io](https://deeph-pack-docs.readthedocs.io/en/latest/).
+For the most comprehensive usage documentation, please visit [https://docs.deeph-pack.com/deeph-pack](https://docs.deeph-pack.com/deeph-pack/en/latest/).
 
 ---
 
@@ -45,7 +45,7 @@ Before installing `DeepH-pack`, ensure that [uv](https://docs.astral.sh/uv/) —
 pip install ./deepx-1.0.6+light-py3-none-any.whl[gpu] --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
-For step-by-step detailed procedures, please refer to the [documentation](https://deeph-pack-docs.readthedocs.io/en/latest//installation_and_setup.html).
+For step-by-step detailed procedures, please refer to the [documentation](https://docs.deeph-pack.com/deeph-pack/en/latest/installation_and_setup.html).
 
 **Parameter explanation:**
 
@@ -62,7 +62,7 @@ deeph-train train.toml
 deeph-infer infer.toml
 ```
 
-For detailed instructions, see [DeepH-pack online documentation](https://deeph-pack-docs.readthedocs.io/en/latest/).
+For detailed instructions, see [DeepH-pack online documentation](https://docs.deeph-pack.com/deeph-pack/en/latest/).
 
 ## Citation
 

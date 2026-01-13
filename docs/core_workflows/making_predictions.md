@@ -149,7 +149,7 @@ These examples demonstrate DeepH's capability to transform massive quantum mater
 
 ## Error Analysis
 
-For detailed instructions, see [DeepH-pack: Analyze Error](https://deeph-dock.readthedocs.io/en/latest/capabilities/analyze/error/demo.html).
+For detailed instructions, see [DeepH-pack: Analyze Error](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/analyze/error/demo.html).
 
 To confirm the validity of the model, the inference result `hamiltonian_pred.h5` is compared with the benchmark data `hamiltonian.h5`. The error extraction and visualization can be done by the `dock analyze error` command in DeepH-dock. It gives detailed error distribution, not just a loss value.
 
@@ -186,7 +186,7 @@ Several error modes are available:
 
 ## Determine and update the Fermi energy
 
-For detailed instructions, see [DeepH-pack: Compute Hamiltonian Diagonalization](https://deeph-dock.readthedocs.io/en/latest/capabilities/compute/eigen/demo.html#fermi-energy).
+For detailed instructions, see [DeepH-pack: Compute Hamiltonian Diagonalization](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/compute/eigen/demo.html#fermi-energy).
 
 After obtaining the predicted Hamiltonian (by default named as `hamiltonian_pred.h5`) through the inferencing process, you can diagonalize it and plot the corresponding band structures with the help of `DeepH-dock`, facilitating subsequent analysis and comparison.
 

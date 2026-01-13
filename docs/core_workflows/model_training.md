@@ -5,7 +5,7 @@
 To train a model via DeepH-pack, the user needs to prepare:
 
 1. a configuration file, named as `<user_defined_name>.toml`, such as `my_train.toml`;
-2. the training data, either in [DeepH-pack's unified DFT data format](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html) (please note that the folder **must** have the name `dft/`):
+2. the training data, either in [DeepH-pack's unified DFT data format](https://docs.deeph-pack.com/deeph-dock/en/latest/key_concepts.html) (please note that the folder **must** have the name `dft/`):
 
 ```bash
 inputs/
@@ -46,7 +46,7 @@ to strat training. If the user starts from the unified DFT data format, the grap
 
 **To commence DeepH training**:
 
-- Either prepare and provide the DFT raw training data directory `dft\`, which allows for automatic graph construction at the start of training. For further details, please refer to our open‑source data interface platform [`DeepH‑dock`](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html).
+- Either prepare and provide the DFT raw training data directory `dft\`, which allows for automatic graph construction at the start of training. For further details, please refer to our open‑source data interface platform [`DeepH‑dock`](https://docs.deeph-pack.com/deeph-dock/en/latest/key_concepts.html).
 - Or supply pre‑built graph files `graph\` (e.g., transferred from external sources to the GPU cluster).
 
 Both approaches are fully supported by DeepH-pack.

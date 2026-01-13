@@ -59,4 +59,4 @@ This functionality has been integrated into the open-source project [**DeepH-doc
 
 ### Does the current version support spin-orbit coupling (SOC) calculations?
 
-Yes, it does. After using DeepH-dock to [convert the raw DFT SOC data](https://deeph-dock.readthedocs.io/en/latest/capabilities/index.html) in [the DeepH format](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html#spin-polarized-systems), DeepH-pack will automatically recognize and train on it.
+Yes, it does. After using DeepH-dock to [convert the raw DFT SOC data](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/index.html) in [the DeepH format](https://docs.deeph-pack.com/deeph-dock/en/latest/key_concepts.html#spin-polarized-systems), DeepH-pack will automatically recognize and train on it.

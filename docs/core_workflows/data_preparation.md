@@ -8,9 +8,9 @@ In this part, we showcase examples of dataset generation with DFT interface.
 
 ### Overview of the DeepH-formatted files
 
-For I/O efficiency considerations, the new version of DeepH has optimized the storage architecture of datasets with [a new format](https://deeph-dock.readthedocs.io/en/latest/key_concepts.html).
+For I/O efficiency considerations, the new version of DeepH has optimized the storage architecture of datasets with [a new format](https://docs.deeph-pack.com/deeph-dock/en/latest/key_concepts.html).
 
-For format conversion from legacy to current DeepH versions, please refer to [DeepH-dock documentation](https://deeph-dock.readthedocs.io/en/latest/capabilities/convert/deeph/demo.html#upgrade).
+For format conversion from legacy to current DeepH versions, please refer to [DeepH-dock documentation](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/convert/deeph/demo.html#upgrade).
 
 The folder tree structure of DeepH-formatted datasets looks like this:
 
@@ -29,7 +29,7 @@ where `overlap.h5`, `hamiltonian.h5` are the corresponding matrices under locali
 
 ### Interface with OpenMX
 
-For detailed instructions, see [DeepH-pack: Convert OpenMX](https://deeph-dock.readthedocs.io/en/latest/capabilities/convert/openmx/demo.html).
+For detailed instructions, see [DeepH-pack: Convert OpenMX](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/convert/openmx/demo.html).
 
 OpenMX (Open source package for Material eXplorer) is an open source DFT calculation package for nano-scale material simulations based on norm-conserving pseudopotentials and pseudo-atomic orbital basis.
 
@@ -77,7 +77,7 @@ dft/ # converted data
 
 ### Interface with SIESTA
 
-For detailed instructions, see [DeepH-pack: Convert SIESTA](https://deeph-dock.readthedocs.io/en/latest/capabilities/convert/siesta/demo.html).
+For detailed instructions, see [DeepH-pack: Convert SIESTA](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/convert/siesta/demo.html).
 
 SIESTA is both a method and its computer program implementation to perform efficient electronic structure calculations with strictly-localized atomic orbital basis.
 
@@ -127,7 +127,7 @@ Note that SIESTA allows different settings for the atoms of the same element (e.
 
 ### Interface with ABACUS
 
-For detailed instructions, see [DeepH-pack: Convert ABACUS](https://deeph-dock.readthedocs.io/en/latest/capabilities/convert/abacus/demo.html).
+For detailed instructions, see [DeepH-pack: Convert ABACUS](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/convert/abacus/demo.html).
 
 ABACUS (Atomic-orbital Based Ab-initio Computation at USTC) is an open-source software package designed for large-scale electronic structure simulations from first principles. ABACUS supports both plane-wave and atomic orbital basis sets, while only the interface with atomic orbital basis mode is implemented in DeepH-dock.
 
@@ -201,7 +201,7 @@ The new format data can also be converted from the updated format to the legacy 
 dock convert deeph downgrade ./dft ./collect_preprocessed -p 2
 ```
 
-For detailed instructions, see [DeepH-pack: Convert DeepH](https://deeph-dock.readthedocs.io/en/latest/capabilities/convert/deeph/demo.html).
+For detailed instructions, see [DeepH-pack: Convert DeepH](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/convert/deeph/demo.html).
 
 ## Guidance and notes for dataset generation
 
