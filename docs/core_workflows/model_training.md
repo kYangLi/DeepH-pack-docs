@@ -46,8 +46,8 @@ to strat training. If the user starts from the unified DFT data format, the grap
 
 **To commence DeepH training**:
 
-- Either prepare and provide the DFT raw training data directory `dft\`, which allows for automatic graph construction at the start of training. For further details, please refer to our open‑source data interface platform [`DeepH‑dock`](https://docs.deeph-pack.com/deeph-dock/en/latest/key_concepts.html).
-- Or supply pre‑built graph files `graph\` (e.g., transferred from external sources to the GPU cluster).
+- Either prepare and provide the DFT raw training data directory `dft/`, which allows for automatic graph construction at the start of training. For further details, please refer to our open‑source data interface platform [`DeepH‑dock`](https://docs.deeph-pack.com/deeph-dock/en/latest/key_concepts.html).
+- Or supply pre‑built graph files `graph/` (e.g., transferred from external sources to the GPU cluster).
 
 Both approaches are fully supported by DeepH-pack.
 
@@ -136,40 +136,54 @@ deeph-train build_graph.toml
 uv pip install ./deepx-1.0.6+light-py3-none-any.whl[cpu] --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 
-### Inspect the DFT dataset and Graph set (Optional)
+### Inspect the DFT Dataset and Graph Set (Optional)
 
-Upon completion of data preparation, *an optional pre-computation step* remains: comprehensive dataset analysis. Thorough understanding of dataset characteristics enables optimized hyperparameter configuration and accelerated model convergence. To facilitate this, we provide integrated utility tools within the `deepx` package. These analytical tools become automatically accessible in your command-line interface after package installation.
+After completing data preparation, you may optionally perform a comprehensive analysis of your dataset. A thorough understanding of the dataset characteristics is crucial for optimizing hyperparameter configuration and accelerating model convergence. To facilitate this, the `deepx` package provides integrated utility tools. Once the package is installed, these analytical tools become readily accessible from your command-line interface.
 
-The `deepx-1.0.6+light` package includes the `deeph-Tool-InspectDataset` command for analyzing raw DFT data features.
-
-```bash
-cd ~/deeph-train/inputs # Your deeph training task root/inputs folder
-deeph-Tool-InspectDataset . --task dft -n 1
-```
-
-After which you will get the message like,
+[DeepH-dock](https://github.com/kYangLi/DeepH-dock) offers the `dock analyze dataset features` command for dataset analysis. [See the documentation](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/analyze/dataset/demo.html#dft-data-features) for details.
 
 ```bash
----------------------------------------------------------------
-[info] Spinful:                False
-[info] User needs parity:      False
-[info] DFT data quantity:      4999
-[info] Elements included:      ['H', 'O']
-[info] Common orbital types:   s3p2d1f1
-[info] Irreps common orbital:  15x0e+24x1e+22x2e+18x3e+8x4e+3x5e+1x6e (441, regrouped)
-[info] Irreps in as suggested: 16x0e+24x1e+24x2e+24x3e+8x4e+4x5e+2x6e (518)
-[info] Irreps in as exp2:      16x0e+8x1e+4x2e+2x3e+2x4e+2x5e+2x6e (140)
-[info] Irreps in as trivial:   16x0e+16x1e+16x2e+16x3e+16x4e+16x5e+16x6e (784)
----------------------------------------------------------------
+cd ~/deeph-train/inputs # Your DeepH training task root/inputs folder
+dock analyze dataset features . -p 8
 ```
 
-For a analyze the Graph data file, execute:
+After execution, you will receive output similar to the following:
 
 ```bash
-deeph-Tool-InspectDataset . --task graph -n 1
+📊 BASIC DATASET INFO
+-----------------------
+  • Spinful:                False
+  • Parity consideration:   False
+  • Total data points:      4,999
+
+🧪 ELEMENT & ORBITAL INFO
+---------------------------
+  • Elements included:      H, O (2 elements)
+  • Orbital source:         auto_detected
+  • Common orbital types:   s3p2d1f1
+
+🎯 IRREPS INFORMATION
+-----------------------
+  Irreps Type          Irreps                                             Dimension
+  .................... .................................................. ..........
+  Common orbital       15x0e+24x1e+22x2e+18x3e+8x4e+3x5e+1x6e             441
+  Suggested            16x0e+24x1e+24x2e+24x3e+8x4e+4x5e+2x6e             518
+  Exp2                 32x0e+16x1e+8x2e+4x3e+2x4e+2x5e+2x6e               214
+  Trivial              32x0e+32x1e+32x2e+32x3e+32x4e+32x5e+32x6e          1568
+
+💡 RECOMMENDATIONS
+--------------------
+  1. Moderate dataset size - regular training recommended
+  2. High-dimensional irreps - consider dimensionality reduction techniques
 ```
 
-It will return,
+Additionally, the `deepx-1.0.6+light` package includes the `deeph-Tool-InspectDataset` command for analyzing the Graph data files. You can execute it as follows:
+
+```bash
+deeph-Tool-InspectDataset . --task graph
+```
+
+It will return information such as:
 
 ```bash
 ---------------------------------------------------------------
@@ -186,6 +200,8 @@ It will return,
 [info] Real Entries:              5443911
 ---------------------------------------------------------------
 ```
+
+**Note on Tool Location:** The graph analysis functionality is included in the `deeph-pack` (specifically within the `deepx` module) rather than in `dock` because graph processing is intrinsically closer to the core training workflow. Furthermore, analyzing graph data requires direct calls to PyTorch libraries, making it a more natural fit within the `deeph-pack` ecosystem.
 
 ## Example: DeepH model training on FHI-aims processed H2O-5k molecular dataset
 

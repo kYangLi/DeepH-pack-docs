@@ -85,7 +85,7 @@ dock analyze error structure ./dft -b ../../inputs/dft -p 2
 
 The Hamiltonian MAE between the prediction of UMM and the benchmark data is $1.44\text{meV}$, which is close to the loss on the original test set ($1.29\text{meV}$). The universal material model provides a reliable one-shot prediction on a wide range of materials, which is convenient for users because no training process is needed.
 
-## 6.3. Fine-tune universal materials model
+## Fine-tune universal materials model
 
 Recalling the training and inference workflows established in Chapters [Model Training](./core_workflows/model_training.md) and [Making Predictions](./core_workflows/making_predictions.md), you may note that DeepH-UMM's current accuracy on specialized material systems requires improvement. When trained on dedicated datasets, DeepH models typically achieve Hamiltonian prediction precision within hundreds of μeV after days of training. However, the Universal Materials Model (UMM) in our current tutorial maintains accuracy around 1.0 meV.
 
