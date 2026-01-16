@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deepx-pack"
-version = "1.0.6+light"
+version = "1.0.6"
 authors = [
     {name = "Whenhui Duan", email = "duanw@tsinghua.com"},
     {name = "Yong Xu", email = "yongxu@tsinghua.com"},
