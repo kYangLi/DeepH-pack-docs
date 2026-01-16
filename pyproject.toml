@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "deepx-pack-docs"
-version = "1.0.0"
+name = "deepx-pack"
+version = "1.0.6+light"
 authors = [
     {name = "Whenhui Duan", email = "duanw@tsinghua.com"},
     {name = "Yong Xu", email = "yongxu@tsinghua.com"},
-    {name = "All other CMTers", email = "cmter@tsinghua.com"},
+    {name = "All the others in DeepH team", email = "deeph-pack@outlook.com"},
 ]
-description = "DeepH-pack documentation."
+description = "DeepH-pack, the latest iteration of DeepH, unites all the preceding DeepH methodologies into a cohesive package. This advanced version has been meticulously rewritten with JAX, enhancing its efficiency and capabilities."
 readme = "README.md"
 license = "GPL-3.0-or-later"
 keywords = [
@@ -22,12 +22,41 @@ classifiers = [
     "Programming Language :: Python"
 ]
 
-requires-python = ">=3.13,<3.14"
+requires-python = ">=3.13,<3.15"
 dependencies = [
+    "pyarmor==9.1.9",
     "numpy",
-    "h5py",
-    "tqdm",
     "toml",
+    "h5py",
+    "matplotlib",
+    "joblib",
+    "rocksdict",
+]
+
+[project.optional-dependencies]
+gpu = [
+    "torch==2.7.1+cpu",
+    "torch_geometric==2.6.1",
+    "jax[cuda12]==0.6.2",
+    "flax==0.10.6",
+    "e3nn-jax==0.20.7",
+    "optax==0.2.5",
+    "orbax-checkpoint==0.11.16"
+]
+cpu = [
+    "torch==2.7.1+cpu",
+    "torch_geometric==2.6.1",
+    "jax[cpu]==0.6.2",
+    "flax==0.10.6",
+    "e3nn-jax==0.20.7",
+    "optax==0.2.5",
+    "orbax-checkpoint==0.11.16"
+]
+julia = ["cython", "juliacall"]
+mpi = ["mpi4py"]
+mpi4jax = ["cython", "mpi4jax==0.7.1"]
+
+docs = [
     "sphinx",
     "sphinx-book-theme",
     "sphinx-autobuild",
@@ -41,6 +70,23 @@ dependencies = [
     "docutils",
 ]
 
+[tool.uv.sources]
+torch = { index = "pytorch_cpu" }
+
+[[tool.uv.index]]
+name = "pytorch_cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+
+[project.scripts]
+# Basic Functions
+deeph-train = "deepx._info:info"
+deeph-infer = "deepx._info:info"
+# Toolkit
+deeph-Tool-InspectDataset = "deepx._info:info"
+deeph-Tool-PlotTrainingProcess = "deepx._info:info"
+deeph-Tool-AnalysisModelParams = "deepx._info:info"
 
 [project.urls]
 Repository = "https://github.com/kYangLi/DeepH-pack-docs.git"
@@ -51,7 +97,7 @@ include-package-data = true
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["deepx*"]
-exclude = ["docs*", "examples*", "tests*",]
+exclude = ["docs*", "examples*", "tests*", ".*", "*.egg-info", "build*"]
 
 [tool.setuptools.package-data]
 "deepx_dock" = [
