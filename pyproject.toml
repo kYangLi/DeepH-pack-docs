@@ -5,11 +5,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deepx-pack"
-version = "1.0.6.post1"
+version = "1.0.6.post2"
 authors = [
-    {name = "Whenhui Duan", email = "duanw@tsinghua.com"},
-    {name = "Yong Xu", email = "yongxu@tsinghua.com"},
-    {name = "All the others in DeepH team", email = "deeph-pack@outlook.com"},
+    {name = "DeepH team", email = "deeph-pack@outlook.com"},
 ]
 description = "DeepH-pack, the latest iteration of DeepH, unites all the preceding DeepH methodologies into a cohesive package. This advanced version has been meticulously rewritten with JAX, enhancing its efficiency and capabilities."
 readme = "README.md"
