@@ -7,8 +7,12 @@
 
 ### *A General-purpose Neural Network Package for Deep-learning Electronic Structure Calculations*
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![GitHub Actions PyPI Release](https://github.com/kYangLi/DeepH-pack-docs/actions/workflows/publish.yaml/badge.svg)](https://github.com/kYangLi/DeepH-pack-docs/actions/workflows/publish.yaml)
+[![PyPI Version](https://img.shields.io/pypi/v/deepx-pack.svg)](https://pypi.org/project/deepx-pack/)
 [![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
+
+[![License](https://img.shields.io/pypi/l/deepx-pack.svg)](https://pypi.org/project/deepx-pack/)
+[![Documentation Status](https://readthedocs.org/projects/deeph-pack-docs/badge/?version=latest)](https://docs.deeph-pack.com/deeph-pack/en/latest/)
 [![GitHub Issues](https://img.shields.io/github/issues/kYangLi/DeepH-pack-docs.svg)](https://github.com/kYangLi/DeepH-pack-docs/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/kYangLi/DeepH-pack-docs.svg?style=social)](https://github.com/kYangLi/DeepH-pack-docs/stargazers)
 
