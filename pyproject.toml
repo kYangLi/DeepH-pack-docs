@@ -5,19 +5,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deepx-pack"
-version = "1.0.6.post2"
+version = "1.0.6.post3"
 authors = [
     {name = "DeepH team", email = "deeph-pack@outlook.com"},
 ]
-description = "DeepH-pack, the latest iteration of DeepH, unites all the preceding DeepH methodologies into a cohesive package. This advanced version has been meticulously rewritten with JAX, enhancing its efficiency and capabilities."
+description = "DeepH-pack is a general-purpose neural network package for deep-learning electronic structure calculations. As the latest evolution of the DeepH framework, it integrates all prior methodologies into a unified, cohesive toolkit. This enhanced version has been fully rebuilt using JAX, delivering greater computational efficiency and expanded functionality."
 readme = "README.md"
 license = "GPL-3.0-or-later"
 keywords = [
     "DeepH-pack", "DeepH", "Physics", "Deep Learning", "Graph Neural Network", "JAX",
 ]
 classifiers = [
-    "Development Status :: 4 - Beta",
-    "Programming Language :: Python"
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.13",
 ]
 
 requires-python = ">=3.13,<3.15"
