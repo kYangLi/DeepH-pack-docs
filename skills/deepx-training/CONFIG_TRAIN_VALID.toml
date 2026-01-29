@@ -1,0 +1,130 @@
+# ---------------------------------- SYSTEM ----------------------------------
+[system]
+note = "--STRING--"
+device = "--STRING--"
+float_type = ["bf16", "tf32", "fp32", "fp64"]
+random_seed = "--INT--"
+log_level = ["debug", "info", "warning", "error", "critical"]
+jax_memory_preallocate = "--BOOL--"
+show_train_process_bar = "--BOOL--"
+
+# ----------------------------------- DATA ------------------------------------
+[data]
+inputs_dir = "--PATH--"
+outputs_dir = "--PATH--"
+
+[data.dft]
+data_dir_depth = "--INT--"
+validation_check = "--BOOL--"
+
+[data.graph]
+dataset_name = "--STRING--"
+graph_type = ["H", "HS", "Rho", "Sap", "S", "VrC", "SapVc", "FF", "IEP"]
+storage_type = ["memory", "disk"]
+disk_shards_num = "--INT--"
+disk_shards_indices = "--LIST--"
+disk_mem_buffer_size = "--INT--"
+common_orbital_types = "--STRING--"
+parallel_num = "--INT--"
+only_save_graph = "--BOOL--"
+
+[data.model_save]
+best = "--BOOL--"
+latest = "--BOOL--"
+latest_interval = "--INT--"
+latest_num = "--INT--"
+latest_cache_mid_step_interval = "--INT--"
+
+# ----------------------------- MODEL -----------------------------------------
+[model]
+net_type = ["sparrow", "fast", "eagle", "accurate", "eagleplus", "albatross", "owl", "swift", "petrel"]
+target_type = ["H", "Rho", "VrC", "Vc", "FF", "IEP"]
+loss_type = ["mae", "mse", "wmae", "emae", "mae_debug", "huber", "ai2dft", "ai2dft_node", "hopad", "aims"]
+
+[model.advanced]
+gaussian_basis_rmax = "--FLOAT--"
+net_irreps = "--IRREPS--"
+latent_irreps = "--IRREPS--"
+latent_edge_cutoff = "--FLOAT--"
+latent_scalar_dim = "--INT--"
+num_blocks = "--INT--"
+num_heads = "--INT--"
+enable_bs3b_layer = "--BOOL--"
+bs3b_orbital_types = "--STRING--"
+consider_parity = "--BOOL--"
+standardize_gauge = "--BOOL--"
+vr_focus_size = "--INT--"
+enable_element_moe = "--BOOL--"
+moe_element_include = "--LIST--"
+
+# ------------------------------ PROCESS --------------------------------------
+[process.train]
+max_epoch = "--INT--"
+
+multi_way_jit_num = "--INT--"
+ahead_of_time_compile = "--BOOL--"
+
+[process.train.dataloader]
+batch_size = "--INT--"
+
+train_size = "--INT--"
+validate_size = "--INT--"
+test_size = "--INT--"
+dataset_split_json = "--PATH--"
+only_use_train_loss = "--BOOL--"
+
+[process.train.drop]
+dropout_rate = "--FLOAT--"
+stochastic_depth = "--FLOAT--"
+proj_rate = "--FLOAT--"
+
+[process.train.optimizer]
+type = ["sgd", "adam", "adamw"]
+init_learning_rate = "--FLOAT--"
+clip_norm_factor = "--FLOAT--"
+# sgd
+momentum = "--FLOAT--"
+# adam(w)
+betas = "--LIST--"
+weight = "--FLOAT--"
+eps = "--FLOAT--"
+
+[process.train.scheduler]
+min_learning_rate_scale = "--FLOAT--"
+type = ["reduce_on_plateau", "warmup_cosine_decay", "warmup_exponential_decay"]
+# reduce_on_plateau
+factor = "--FLOAT--"
+patience = "--INT--"
+rtol = "--FLOAT--"
+cooldown = "--INT--"
+accum_size = "--INT--"
+# warmup_cosine_decay
+init_scale = "--FLOAT--"
+warmup_steps = "--INT--"
+decay_steps = "--INT--"
+end_scale = "--FLOAT--"
+# warmup_exponential_decay
+#init_scale = "--FLOAT--"
+#warmup_steps = "--INT--"
+transition_begin = "--INT--"
+transition_steps = "--INT--"
+staircase = "--BOOL--"
+#end_scale = "--FLOAT--"
+
+[process.train.continued]
+enable = "--BOOL--"
+new_training_data = "--BOOL--"
+new_optimizer = "--BOOL--"
+previous_output_dir = "--PATH--"
+load_model_type = ["best", "latest"]
+load_model_epoch = "--INT--" # only useful under 'latest' mode, -1 for the latest epoch
+
+[process.train.with_plugin]
+enable = "--BOOL--"
+plugin = ["null", "unsupervised", "G_C2Vr"]
+env_path = "--PATH--"
+script_path = "--PATH--"
+# Unsupervised additional options
+backend = ["null", "ai2dft", "ai2dft_jax", "hopad", "aims"]
+dump_intermediate = "--BOOL--"
+

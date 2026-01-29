@@ -1,0 +1,130 @@
+# ---------------------------------- SYSTEM ----------------------------------
+[system]
+note = "Enjoy DeepH-pack! ;-)"
+device = "gpu*8:0"
+float_type = "fp32"
+random_seed = 137
+log_level = "info"
+jax_memory_preallocate = true
+show_train_process_bar = true
+
+# ----------------------------------- DATA ------------------------------------
+[data]
+inputs_dir = "./inputs"
+outputs_dir = "./outputs"
+
+[data.dft]
+data_dir_depth = 0
+validation_check = false
+
+[data.graph]
+dataset_name = "DATASET-DEMO"
+graph_type = "H"
+storage_type = "memory"
+disk_shards_num = 1
+disk_shards_indices = []
+disk_mem_buffer_size = 2048
+common_orbital_types = ""
+parallel_num = -1
+only_save_graph = false
+
+[data.model_save]
+best = true
+latest = true
+latest_interval = 100
+latest_num = 10
+latest_cache_mid_step_interval = -1
+
+# ----------------------------- MODEL -----------------------------------------
+[model]
+net_type = "sparrow"
+target_type = "H"
+loss_type = "mse"
+
+[model.advanced]
+gaussian_basis_rmax = 7.5
+net_irreps = ""
+latent_irreps = ""
+latent_edge_cutoff = 100.0
+latent_scalar_dim = -1
+num_blocks = 3
+num_heads = 2
+enable_bs3b_layer = false
+bs3b_orbital_types = ""
+consider_parity = false
+standardize_gauge = false
+vr_focus_size = 256
+enable_element_moe = false
+moe_element_include = []
+
+# ------------------------------ PROCESS --------------------------------------
+[process.train]
+max_epoch = 10000
+
+multi_way_jit_num = 1
+ahead_of_time_compile = false
+
+[process.train.dataloader]
+batch_size = 1
+
+train_size = 1
+validate_size = 0
+test_size = 0
+dataset_split_json = ""
+only_use_train_loss = false
+
+[process.train.drop]
+dropout_rate = 0.1
+stochastic_depth = 0.0
+proj_rate = 0.0
+
+[process.train.optimizer]
+type = "adamw"
+init_learning_rate = 2E-3
+clip_norm_factor = -1.0
+# sgd
+momentum = 0.8
+# adam(w)
+betas = [0.9, 0.999]
+weight = 0.001
+eps = 1E-8
+
+[process.train.scheduler]
+min_learning_rate_scale = 1E-4
+type = "reduce_on_plateau"
+# reduce_on_plateau
+factor = 0.5
+patience = 500
+rtol = 0.05
+cooldown = 100
+accum_size = -1
+# warmup_cosine_decay
+init_scale = 0.1
+warmup_steps = 10
+decay_steps = -1
+end_scale = -1.0
+# warmup_exponential_decay
+#init_scale = 0.1
+#warmup_steps = 10
+transition_begin = 0
+transition_steps = 10000
+staircase = true
+#end_scale = -1.0
+
+[process.train.continued]
+enable = false
+new_training_data = false
+new_optimizer = false
+previous_output_dir = ""
+load_model_type = "latest"
+load_model_epoch = -1 # only useful under 'latest' mode, -1 for the latest epoch
+
+[process.train.with_plugin]
+enable = false
+plugin = "null"
+env_path = "./need/user/set/this"
+script_path = "./need/user/set/this"
+# Unsupervised additional options
+backend = "null"
+dump_intermediate = false
+

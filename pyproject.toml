@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deepx-pack"
-version = "1.0.6.post3"
+version = "1.2.1"
 authors = [
     {name = "DeepH team", email = "deeph-pack@outlook.com"},
 ]
@@ -95,7 +95,10 @@ include-package-data = true
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["deepx*"]
-exclude = ["docs*", "examples*", "tests*", ".*", "*.egg-info", "build*"]
+exclude = [
+    "docs*", "examples*", "tests*", ".*", "*.egg-info", "build*",
+    "opencode_skill*"
+]
 
 [tool.setuptools.package-data]
 "deepx_dock" = [
