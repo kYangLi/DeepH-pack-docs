@@ -1,45 +1,5 @@
 # DeepH 数据集格式
 
-## 概览 (Overview)
-
-要使用 DeepH-pack 训练模型，用户需要准备以下内容：
-
-1. 一个配置文件，命名为 `<用户定义名称>.toml`，例如 `my_train.toml`；
-2. 训练数据，可以是 [DeepH-pack 的统一 DFT 数据格式](https://docs.deeph-pack.com/deeph-dock/en/latest/key_concepts.html)（请注意，文件夹名称 **必须** 为 `dft/`）：
-
-```bash
-inputs/
-  |- dft/                # DFT 数据文件夹（可选，如果存在 graph 文件夹）
-    |- <sid>               # 结构 ID (Structure ID)
-       |- info.json        # 额外信息
-       |- POSCAR           # 原子结构
-       |- overlap.h5       # {R} 空间中的基组重叠矩阵
-       |- (hamiltonian.h5) # {R} 空间中的哈密顿量条目
-       |- (position.h5)
-       |- (charge_density.h5)
-       |- (density_matrix.h5)
-       |- (force.h5)
-    |- ...
-```
-
-或者使用 DeepH-pack 图文件格式（文件夹名称 **必须** 为 `graph/`）：
-
-```bash
-inputs/
-  |- graph               # 图文件夹（可选）
-    |- <GRAPH_NAME>.<GRAPH_TYPE>.memory.npz
-    |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.npz
-    |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.db/
-    |- <GRAPH_NAME>.<GRAPH_TYPE>.disk.part1-of-1.info.npz
-
-```
-
-然后运行以下命令以开始训练。**如果用户从 DFT 数据格式开始，图文件将自动生成。**
-
-```bash
-deeph-train my_train.toml
-```
-
 ## 原始训练数据与图文件
 
 **开始 DeepH 训练的方式**：
@@ -70,7 +30,7 @@ inputs/
 
 ```
 
-作为一个基于 GNN 的框架，DeepH-pack 基于图文件运行。构建这些图文件是工作流中的必要步骤，既可以与训练程序一起执行，也可以作为单独的预处理任务执行。从技术上讲，图文件是直接从 DFT 数据转换而来的。与涉及分散的原始数据文件夹的传统存储方法相比，图文件系统提供了几个关键优势：
+作为一个基于图神经网络 (GNN) 的框架，DeepH 以图文件为基础进行运行。构建图文件是工作流中的关键步骤，这些图文件作为缓存可大大加速后续训练任务。图文件可以在首次训练程序执行时自动生成，也可以作为独立的预处理任务产生。技术上讲，图文件是直接从 DFT 数据转换而来的，与文件夹分散存储的DFT原始数据相比，图文件系统提供了几个关键优势：
 
 - **数值精度灵活性 (Numerical Precision Flexibility)：** DeepH-pack 支持 32 位和 64 位浮点精度，允许用户根据设备内存容量选择合适的设置。
 - **统一的数据便携性 (Unified Data Portability)：** 图文件被打包为单个集成文件，比碎片化的原始数据文件夹更容易在服务器或集群之间传输。
@@ -97,7 +57,7 @@ DeepH-pack 目前支持两种不同的图文件存储模式：
 
 ### 可选操作：单独构建图文件
 
-启动标准 DeepH 训练会话时，框架会自动根据 `dft/` 目录中的 DFT 数据构建图文件并生成相应的图 `dataloader`。然而，鉴于图构建是 CPU 独占的性质以及图文件在数据便携性方面的固有优势，DeepH-pack 也支持将图生成与 GPU 加速的训练过程解耦。此外，如果图文件已存在，训练会话将跳过原始 DFT 数据，通过基于图的数据抽象简化训练工作流。
+启动标准 DeepH 训练会话时，框架会自动根据 `dft/` 目录中的 DFT 数据构建图文件并生成相应的图 `dataloader`。然而，鉴于图构建是 CPU 独占的性质以及图文件在数据便携性方面的固有优势，DeepH-pack 也支持将图生成与 GPU 加速的训练过程解耦。此外，如果图文件已存在，训练会话将跳过原始 DFT 数据读取和解析，大大加速模型训练过程。
 
 `build_graph.toml`:
 
@@ -134,19 +94,24 @@ deeph-train build_graph.toml
 uv pip install ./deepx-1.2.x-py3-none-any.whl[cpu]
 ```
 
-### 可选（但强烈建议做的）操作：检查 DFT 数据集特征
+### 可选（但强烈建议的）操作：检查 DFT 数据集特征
 
-完成数据准备后，您可以选择对数据集进行全面分析。深入了解数据集特征对于优化超参数配置和加速模型收敛至关重要。为此，[DeepH-dock](https://github.com/kYangLi/DeepH-dock) 提供了 `dock analyze dataset features` 命令用于数据集分析。详情请参阅 [文档](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/analyze/dataset/demo.html#dft-data-features)。
+完成数据准备后，您可以选择对数据集进行全面分析。**深入了解数据集特征对于优化超参数配置和加速模型收敛至关重要。** 为此，[DeepH-dock](https://github.com/kYangLi/DeepH-dock) 提供了 `dock analyze dataset features` 命令用于数据集分析。详情请参阅 [文档](https://docs.deeph-pack.com/deeph-dock/en/latest/capabilities/analyze/dataset/demo.html#dft-data-features)。
 
 ```bash
 # 如果DeepH-dock未安装，执行：
 uv pip install deepx-dock # 在您的 uv 虚拟环境中安装
-# 如果已安装，跳过上一步骤
-cd ~/deeph-train/inputs # 您的 DeepH 训练任务根目录/inputs 文件夹
-dock analyze dataset features . -p 8
+# 如果DeepH-dock已安装，跳过上一步骤
+# 进入 DeepH 训练任务根目录的输入数据文件夹
+cd ~/deeph-train/inputs 
+# 此文件夹中应该包含一个名为 `dft/` 的子文件夹
+# 执行以下命令以分析数据集特征
+dock analyze dataset features .
+# 如果速度过慢，尝试并行解析数据集
+dock analyze dataset features . -p 4
 ```
 
-执行后，您将收到类似于以下的输出：
+分析结束后，您将收到类似于以下的输出，其中包含了训练相关的诸多关键参数推荐：
 
 ```bash
 📊 BASIC DATASET INFO (基本数据集信息)
