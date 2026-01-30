@@ -95,7 +95,7 @@
 ---
 
 **`[model.advanced.bs3b_orbital_types]`**
-*   **说明 (Description)**: BS3B 层的轨道类型设置。其格式与 `data.graph.common_orbital_types` 一致，单个原子的轨道列表，按照 `l`（角量子数）的值排列，格式为`sNpNdNfN...`，例如 `s2p2d1`。一般需要设置每个l上的channel数远大于 `common_orbital_types`。是十分关键的参数。
+*   **说明 (Description)**: BS3B 层的轨道类型设置。其格式与 `data.graph.common_orbital_types` 一致，单个原子的轨道列表，按照 `l`（角量子数）的值排列，格式为`sNpNdNfN...`，例如`s3p2d1`对应`[0,0,0,1,1,2]`,代表了s轨道3个，p轨道2个，d轨道1个。一般需要设置每个l上的channel数远大于 `common_orbital_types`。是十分关键的参数。
 *   **默认值 (Default)**: `2`
 *   **类型 (Type)**: `<INT>` (整数)
 

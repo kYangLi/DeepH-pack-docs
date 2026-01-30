@@ -125,7 +125,7 @@ deeph-train my_train.toml
     *   通用模型（跨元素周期表）：5 层以上。
 *   **`num_heads`**：注意力头数，通常设为 `2` 即可。
 *   **`latent_irreps` / `latent_scalar_dim`**：在使用 `albatross` 等特定网络时非常关键，设置逻辑同 `net_irreps`。
-*   **`enable_bs3b_layer` & `bs3b_orbital_types`**：**通用多元素模型必开**。这对提升泛化能力至关重要。其格式为 bs3b_orbital_types = "sNpNdNfN...", 其中s,p,d,f为不同l的轨道类型，N为轨道数。
+*   **`enable_bs3b_layer` & `bs3b_orbital_types`**：**多化学元素模型必开**。这对提升泛化能力至关重要。其格式为 bs3b_orbital_types = "sNpNdNfN...", 其中s,p,d,f为不同l的轨道类型，N为轨道数。例如`s3p2d1`对应`[0,0,0,1,1,2]`,代表了s轨道3个，p轨道2个，d轨道1个。
 *   **`standardize_gauge`**: **非专用模型必开**。对于非专用模型（即不仅仅针对单一结构及其微扰体系进行训练的模型）而言，该设置至关重要，能有效解决不同结构间化学势参考点不一致的问题，确保训练的准确性。
 
 ### 5.2 物理与数据设置
