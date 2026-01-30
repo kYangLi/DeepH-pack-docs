@@ -1,7 +1,7 @@
 ---
 name: DeepH-pack 模型批量训练调参
 description: "本技能详细阐述了如何使用 DeepH 进行模型训练并实施批量调参，以找到最优的超参组合。模型训练调参是 DeepH 机器学习任务中的关键环节，通过系统性调参，可显著优化模型性能并提高预测准确性。本指南涵盖了从环境配置、模型选择、参数设置到批量训练策略及结果评估的全流程。"
-license: Proprietary. LICENSE.txt has complete terms
+license: Proprietary. LICENSE.txt 中包含全部授权信息。
 ---
 
 # DeepH-pack 模型批量训练调参指南
@@ -46,32 +46,33 @@ DeepH 使用 TOML 文件进行训练和推理配置。**默认训练配置模版
 **配置文件：**
 *   用户配置文件TOML参考模版！：
     *   阅读 CONFIG_TRAIN_DEFAULT.toml 获取：包含默认训练配置模版。
-    *   阅读 CONFIG_TRAIN_VALID.toml 获取：包含所有值合法类型。
-*   用户可自定义配置文件名（如 `train_config.toml`）。
+    *   阅读 CONFIG_TRAIN_VALID.toml 获取：训练配置参数值的合法类型或范围。
+    *   阅读 training_toml.md 获取：训练配置参数的详细定义和补充说明。
+*   用户可自定义配置文件名（如 `my_train.toml`）。
 *   详细参数定义请参阅 [DeepH-pack 训练参数文档](./training_toml.md)。
 
 ### 3.2 数据集准备
-训练数据需存放于 `train_config.toml` 中 `data.inputs_dir` 指定的目录。数据格式必须严格符合 [DeepH-pack 数据集格式文档](./dataset_format.md) 的要求。
+训练数据需存放于 `my_train.toml` 中 `data.inputs_dir` 指定的目录。数据格式必须严格符合 [DeepH 数据集格式](./dataset_format.md) 的要求。
 
-特别注意!：如果在`train_config.toml`中使用相对路径，则该相对路径是相对于`train_config.toml`文件所在目录的路径。为避免谬误，大部分情况下推荐使用绝对路径。
+特别注意!：如果在`my_train.toml`中使用相对路径，则该相对路径是相对于`my_train.toml`文件所在目录的路径。为避免谬误，大部分情况下推荐使用绝对路径。
 
-重要提示：关于数据集划分，可以使用`train_config.toml`中的`train_size`,`validate_size`,`test_size` 三个参数进行划分，这个三个参数必须是整数，代表训练集、验证集、测试集中的样本数量。
+重要提示：关于数据集划分，可以使用`my_train.toml`中的`train_size`,`validate_size`,`test_size` 三个参数进行划分，这个三个参数必须是整数，代表训练集、验证集、测试集中的样本数量。
 
-重要提示：如果想要完全控制数据集划分样本严格一致，请设置`train_config.toml`中的`dataset_split_json`选项，该选项指向一个json文件，内部包含了训练集、验证集、测试集的样本id列表。dataset_split_json 更具体的细节可参考当前 `dock analyze dataset split` 命令说明。
+重要提示：如果想要完全控制数据集划分样本严格一致，请设置`my_train.toml`中的`dataset_split_json`选项，该选项指向一个json文件，内部包含了训练集、验证集、测试集的样本id列表。dataset_split_json 更具体的细节可参考当前 `dock analyze dataset split` 命令说明。
 
 ### 3.3 任务提交方式
 
 #### A. 裸机环境 (Bare Metal)
 直接在终端运行指令即可，建议使用 `nohup ... &` 保持后台运行：
 ```bash
-deeph-train train_config.toml
+deeph-train my_train.toml
 ```
 
 #### B. 超算环境 (HPC with Slurm/PBS)
 在超算环境中，严禁在登录节点直接运行高负载任务。必须通过作业调度系统（如 Slurm, PBS）提交。
 
 **注意事项：**
-1.  **资源一致性**：申请的 GPU 卡数必须与 `train_config.toml` 中的 `system.device` 配置保持一致。
+1.  **资源一致性**：申请的 GPU 卡数必须与 `my_train.toml` 中的 `system.device` 配置保持一致。
 2.  **设备配置语法**：
     *   格式：`<type>*<num>:<id>`
     *   `<type>`: 硬件类型 (`cpu`, `gpu`, `rocm`, `dcu`, `cuda`)。
@@ -124,7 +125,8 @@ deeph-train train_config.toml
     *   通用模型（跨元素周期表）：5 层以上。
 *   **`num_heads`**：注意力头数，通常设为 `2` 即可。
 *   **`latent_irreps` / `latent_scalar_dim`**：在使用 `albatross` 等特定网络时非常关键，设置逻辑同 `net_irreps`。
-*   **`enable_bs3b_layer` & `bs3b_orbital_types`**：**通用大模型必开**。这对提升泛化能力至关重要。
+*   **`enable_bs3b_layer` & `bs3b_orbital_types`**：**通用多元素模型必开**。这对提升泛化能力至关重要。其格式为 bs3b_orbital_types = "sNpNdNfN...", 其中s,p,d,f为不同l的轨道类型，N为轨道数。
+*   **`standardize_gauge`**: **非专用模型必开**。对于非专用模型（即不仅仅针对单一结构及其微扰体系进行训练的模型）而言，该设置至关重要，能有效解决不同结构间化学势参考点不一致的问题，确保训练的准确性。
 
 ### 5.2 物理与数据设置
 *   **`gaussian_basis_rmax`**：必须覆盖哈密顿量基组的半径范围，推荐值为 `7.5 - 10.0`。
@@ -174,7 +176,7 @@ deeph-train train_config.toml
 *   **原因**：防止批量提交速度过快导致时间戳重叠（撞车），造成不同实验输出到同一目录的严重 Bug，同时也便于后续的模型管理和对比。
 
 ### Q5: 建图模式 `disk` vs `memory` 如何选择？
-**A:**
+**A:** 关于建图模式，推荐优先使用 **Memory 模式**。
 *   **Memory 模式**：将图数据全量加载到内存。**速度最快**，推荐内存充足时首选。
 *   **Disk 模式**：数据存储在磁盘，随用随读。**节省内存**，但会显著增加 I/O 开销，降低训练速度。仅在内存不足时使用。
 
