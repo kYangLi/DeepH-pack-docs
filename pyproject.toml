@@ -23,8 +23,9 @@ classifiers = [
 requires-python = ">=3.13,<3.15"
 dependencies = [
     "pyarmor==9.1.9",
+    "tqdm",
     "numpy",
-    "toml",
+    "tomli-w",
     "h5py",
     "matplotlib",
     "joblib",
@@ -32,49 +33,51 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-gpu = [
-    "torch==2.7.1+cpu",
-    "torch_geometric==2.6.1",
-    "jax[cuda12]==0.6.2",
-    "flax==0.10.6",
-    "e3nn-jax==0.20.7",
-    "optax==0.2.5",
-    "orbax-checkpoint==0.11.16"
+tpu = [
+    "jax[tpu]==0.8.0",
+    "flax==0.12.0",
+    "e3nn-jax==0.20.8",
+    "optax==0.2.6",
+    "orbax-checkpoint==0.11.26"
+]
+cuda13 = [
+    "jax[cuda13]==0.8.0",
+    "flax==0.12.0",
+    "e3nn-jax==0.20.8",
+    "optax==0.2.6",
+    "orbax-checkpoint==0.11.26"
+]
+cuda12 = [
+    "jax[cuda12]==0.8.0",
+    "flax==0.12.0",
+    "e3nn-jax==0.20.8",
+    "optax==0.2.6",
+    "orbax-checkpoint==0.11.26"
+]
+cuda12-stable = [
+    "jax[cuda12]==0.7.0",
+    "flax==0.11.2",
+    "e3nn-jax==0.20.8",
+    "optax==0.2.6",
+    "orbax-checkpoint==0.11.25"
 ]
 cpu = [
-    "torch==2.7.1+cpu",
-    "torch_geometric==2.6.1",
-    "jax[cpu]==0.6.2",
-    "flax==0.10.6",
-    "e3nn-jax==0.20.7",
-    "optax==0.2.5",
-    "orbax-checkpoint==0.11.16"
+    "jax[cpu]==0.8.0",
+    "flax==0.12.0",
+    "e3nn-jax==0.20.8",
+    "optax==0.2.6",
+    "orbax-checkpoint==0.11.26"
+]
+cpu-stable = [
+    "jax[cpu]==0.7.0",
+    "flax==0.11.2",
+    "e3nn-jax==0.20.8",
+    "optax==0.2.6",
+    "orbax-checkpoint==0.11.26"
 ]
 julia = ["cython", "juliacall"]
 mpi = ["mpi4py"]
-mpi4jax = ["cython", "mpi4jax==0.7.1"]
-
-docs = [
-    "sphinx",
-    "sphinx-book-theme",
-    "sphinx-autobuild",
-    "ipykernel",
-    "myst_nb",
-    "nbstripout",
-    "recommonmark",
-    "ipython_genutils",
-    "sphinx-design",
-    "jupytext",
-    "docutils",
-]
-
-[tool.uv.sources]
-torch = { index = "pytorch_cpu" }
-
-[[tool.uv.index]]
-name = "pytorch_cpu"
-url = "https://download.pytorch.org/whl/cpu"
-explicit = true
+mpi4jax = ["cython", "mpi4jax==0.8.1"]
 
 
 [project.scripts]
