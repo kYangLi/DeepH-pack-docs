@@ -61,6 +61,7 @@ DeepH 使用 TOML 文件进行训练和推理配置。**默认训练配置模版
 *   **功能**：DeepH-dock 提供了网络表示推荐功能，用于分析数据集特征并推荐合适的网络结构。
 *   **使用方法**：在命令行中执行 `dock analysis` 命令，并指定数据集路径。例如：
     ```bash
+    # 注意：若该命令在部分环境下执行失败，可通过设置环境变量或添加 -p 1 参数强制串行执行，以提高稳定性。
     dock analyze dataset features <inputs_dir> # <inputs_dir> 应包含 dfts/ 子目录
     ```
 
