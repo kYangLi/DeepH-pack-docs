@@ -154,8 +154,8 @@ deeph-train my_train.toml
     *   哈密顿量/密度矩阵任务：首选 `eagleplus` 或 `albatross`。
 *   **`target_type` 预测目标（物理量）**：本 Skill 专为预测**哈密顿量**或**密度矩阵**而设计。对**力场（或原子间势）**等任务提供有限支持，使用时需用户显式定义额外的任务特征。
 *   **`loss_type` Loss Function**：
-    *   首选：`MAE` (Mean Absolute Error)。
-    *   备选：`MSE` 偶尔也可尝试。
+    *   首选：`mae` (Mean Absolute Error)。
+    *   备选：`mse` 偶尔也可尝试。
 *   **`gaussian_basis_rmax`**：必须覆盖哈密顿量基组的半径范围，推荐值为 `7.5 - 10.0`。
 *   **`test_size` 测试集规模**：**必须划分测试集**。没有测试集无法评估过拟合情况，模型结果将失去参考意义。
 
