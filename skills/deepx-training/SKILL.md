@@ -74,7 +74,8 @@ DeepH 使用 TOML 文件进行训练和推理配置。**默认训练配置模版
     *   该选项需指向一个包含具体样本 ID 列表的 JSON 文件。
     *   **辅助工具**：可使用 DeepH-dock 指令生成该文件：
         ```bash
-        dock analyze dataset split <inputs_dir>
+        # 注意：若该命令在部分环境下执行失败，可通过设置环境变量或添加 -p 1 参数强制串行执行，以提高稳定性。
+        dock analyze dataset split <inputs_dir> # <inputs_dir> 应包含 dfts/ 子目录
         ```
 
 ### 3.3 任务提交方式
