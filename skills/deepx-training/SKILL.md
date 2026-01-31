@@ -62,7 +62,7 @@ DeepH 使用 TOML 文件进行训练和推理配置。**默认训练配置模版
 *   **使用方法**：在命令行中执行 `dock analysis` 命令，并指定数据集路径。例如：
     ```bash
     # 注意：若该命令在部分环境下执行失败，可通过设置环境变量或添加 -p 1 参数强制串行执行，以提高稳定性。
-    dock analyze dataset features <inputs_dir> # <inputs_dir> 应包含 dfts/ 子目录
+    dock analyze dataset features <inputs_dir> # <inputs_dir> 应包含 dft/ 子目录
     ```
 
 **3. 数据集划分策略**
@@ -75,7 +75,7 @@ DeepH 使用 TOML 文件进行训练和推理配置。**默认训练配置模版
     *   **辅助工具**：可使用 DeepH-dock 指令生成该文件：
         ```bash
         # 注意：若该命令在部分环境下执行失败，可通过设置环境变量或添加 -p 1 参数强制串行执行，以提高稳定性。
-        dock analyze dataset split <inputs_dir> # <inputs_dir> 应包含 dfts/ 子目录
+        dock analyze dataset split <inputs_dir> # <inputs_dir> 应包含 dft/ 子目录
         ```
 
 ### 3.3 任务提交方式
