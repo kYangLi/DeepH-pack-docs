@@ -523,7 +523,7 @@ Within the [`optax`](https://github.com/google-deepmind/optax) optimization fram
 *   **Description**: For `"reduce_on_plateau"` only. The `patience` and `cooldown` parameters operate on gradient update steps rather than epochs, with their baseline values calculated as *training batches per epoch* $\times$ *target epochs*. For instance, given 100 batches in each epoch:
     *   To monitor validation loss for 20 epochs without gradient accumulation (`accum_size`=1), set patience=100$\times$20=2000.
     *   With `accum_size`=100 (effectively creating macro-batches of 100$\times$`batch_size`), each "step" becomes equivalent to 1 epoch, thus `patience`=20 suffices.
-    *   When patience=-1, the system auto-configures it as total training batches to implement full-epoch monitoring cycles.
+    *   When `accum_size`=-1, the system auto-configures it as total training batches to implement full-epoch monitoring cycles.
     Cooldown steps follow equivalent computational logic based on gradient update granularity.
 *   **Default**: `-1`
 *   **Type**: `<INT>`
