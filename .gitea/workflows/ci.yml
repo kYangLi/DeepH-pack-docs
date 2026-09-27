@@ -1,0 +1,52 @@
+name: ci
+
+# High-frequency documentation build on the internal Gitea runner.
+# Purpose: catch a broken docs build before anything is pushed to the public GitHub repo.
+#
+# Notes (see _admin_mailbox/gitea-cicd-experience.md):
+# - The runner cannot reach github.com / upstream PyPI: use the Tsinghua mirror.
+# - Use a throw-away venv; the runner's shared Python toolcache leaks state between runs.
+# - Python 3.12 is used because it is pre-cached on the runner (requesting another version
+#   makes setup-python try to download from github.com, which the runner cannot reach).
+# - We install only the Sphinx toolchain (not `.[docs]`): the project requires Python
+#   >=3.13, and we deliberately build the docs on the runner's cached 3.12.
+on:
+  push:
+  pull_request:
+
+jobs:
+  docs:
+    name: build docs
+    runs-on: cpu
+    timeout-minutes: 30
+    env:
+      PIP_INDEX_URL: https://pypi.tuna.tsinghua.edu.cn/simple
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Sphinx toolchain (isolated venv)
+        run: |
+          set -euo pipefail
+          python -m venv .ci-venv
+          .ci-venv/bin/python -m pip install --upgrade pip
+          .ci-venv/bin/python -m pip install sphinx sphinx-book-theme myst-nb sphinx-design
+
+      - name: Build documentation
+        run: |
+          set -euo pipefail
+          cd docs
+          # docs/examples/ is generated from examples/**/*.ipynb (symlinks), so build it first.
+          ../.ci-venv/bin/python gen_examples.py
+          ../.ci-venv/bin/python -m sphinx -b html . _build/html
+
+# Notes:
+# - Do not add `-W`: the documentation currently emits ~31 pre-existing `myst.xref_missing`
+#   warnings (from the anchor lists in configuration_options/*.md), which is expected.
+# - Do not override `container:` with slim images: actions/* need node + git, and the
+#   default runner image (ghcr.io/catthehacker/ubuntu:act-22.04) already provides them.

@@ -1,0 +1,89 @@
+name: create-release
+
+# On a version tag (v*) pushed to this Gitea repository, build the documentation
+# static site and attach it to a DRAFT Gitea Release for internal record.
+#
+# On Gitea we do NOT publish any Python package: `deepx-pack` is a PyPI placeholder
+# only, and it is released from GitHub (see .github/workflows/*). Here the draft
+# release is just a versioned snapshot of the docs (HTML zip), which a maintainer
+# may publish manually if desired (publishing a Gitea Release triggers nothing).
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  draft:
+    name: Build docs and create draft Gitea Release
+    runs-on: cpu
+    timeout-minutes: 30
+    env:
+      PIP_INDEX_URL: https://pypi.tuna.tsinghua.edu.cn/simple
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build documentation static site
+        env:
+          TAG: ${{ gitea.ref_name }}
+        run: |
+          set -euo pipefail
+          python -m venv .rel-venv
+          .rel-venv/bin/python -m pip install --upgrade pip
+          .rel-venv/bin/python -m pip install sphinx sphinx-book-theme myst-nb sphinx-design
+          (
+            cd docs
+            ../.rel-venv/bin/python gen_examples.py
+            ../.rel-venv/bin/python -m sphinx -b html . _build/html
+          )
+          VER="${TAG#v}"
+          .rel-venv/bin/python -c "import shutil, os, sys; os.makedirs('dist', exist_ok=True); shutil.make_archive('dist/deeph-pack-docs-' + sys.argv[1] + '-html', 'zip', root_dir='docs/_build/html')" "$VER"
+          ls -l dist
+
+      - name: Create draft release and upload the docs snapshot
+        env:
+          TOKEN: ${{ secrets.GITEA_TOKEN }}
+          REPO: ${{ gitea.repository }}
+          TAG: ${{ gitea.ref_name }}
+        run: |
+          set -euo pipefail
+          API="https://gitea.private.thu-cmt.group/api/v1/repos/$REPO"
+
+          # Reuse the release for this tag if it exists, otherwise create a draft.
+          REL_ID=$(curl -sf -H "Authorization: token $TOKEN" "$API/releases/tags/$TAG" | jq -r '.id' || true)
+          if [ -z "${REL_ID:-}" ] || [ "$REL_ID" = "null" ]; then
+            BODY="Docs snapshot for ${TAG}. Review and publish manually if desired."
+            REL_ID=$(curl -sf -X POST \
+              -H "Authorization: token $TOKEN" -H 'Content-Type: application/json' \
+              "$API/releases" \
+              -d "$(jq -n --arg t "$TAG" --arg b "$BODY" '{tag_name:$t, name:$t, body:$b, draft:true, prerelease:false}')" \
+              | jq -r '.id')
+          fi
+          echo "release id: $REL_ID"
+
+          # Upload the docs .zip; skip names already present (idempotent re-runs).
+          EXISTING=$(curl -sf -H "Authorization: token $TOKEN" "$API/releases/$REL_ID/assets" | jq -r '.[].name' || true)
+          for f in dist/*.zip; do
+            [ -e "$f" ] || continue
+            name=$(basename "$f")
+            if printf '%s\n' "$EXISTING" | grep -qxF "$name"; then
+              echo "asset $name already present; skipping"
+              continue
+            fi
+            curl -sf -X POST -H "Authorization: token $TOKEN" \
+              -F "attachment=@$f" \
+              "$API/releases/$REL_ID/assets?name=$name"
+            echo "uploaded $name"
+          done
+
+# Notes:
+# - To also ship a PDF, add a LaTeX/PDF step (`sphinx -b latex` + `latexmk`) and attach
+#   the resulting file; this needs TeX Live on the runner, so it is left out for now.
+# - Keep pushing one tag at a time (see the dual-remote playbook).
