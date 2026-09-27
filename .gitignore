@@ -1,6 +1,7 @@
 /.cspell
 /.vscode
 /docs/examples
+/AGENTS.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
