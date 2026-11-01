@@ -37,15 +37,14 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 
 ### 🎤 DeepH-pack Global User Conference
 
-- **2025 Conference Materials**: [Workshop Tutorials & Case Studies](https://deeph-workshop-tutorial.readthedocs.io)
+- **2025 Workshop Materials**: [2025 Tutorials & Case Studies](https://deeph-workshop-tutorial.readthedocs.io/en/2025/)
 
 | ![DeepH-Conference-2025](./_image/User_Conference_2025.jpg) |
 | :------: |
 | **2025 User Conference Successfully Concluded!**<br>*Global materials scientists gathered to explore computational frontiers* |
 
-- **Upcoming Events**:  
-  <!-- [2026 Conference Announcement Timeline](...) -->
-  2026 Conference Announcement Timeline (Coming Soon...)
+- **Upcoming Events**:
+  - **2026 Workshop**: The 2026 DeepH-pack Workshop is coming soon. The [2026 tutorial site](https://deeph-workshop-tutorial.readthedocs.io/en/2026/) is now public.
 - **Community Channels**:
   - [GitHub Issue](https://github.com/kYangLi/DeepH-pack-docs/issues)
   <!-- - Slack/Mattermost -->
