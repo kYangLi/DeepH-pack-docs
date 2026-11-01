@@ -44,7 +44,7 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 
 | ![DeepH-Conference-2025](./_image/User_Conference_2025.jpg) |
 | :------: |
-| **2025 User Conference Successfully Concluded!**<br>*Global materials scientists gathered to explore computational frontiers*
+| **2025 User Conference Successfully Concluded!**<br>*Global materials scientists gathered to explore computational frontiers* |
 
 - **Community Channels**:
   - [GitHub Issue](https://github.com/kYangLi/DeepH-pack-docs/issues)
