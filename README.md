@@ -97,7 +97,7 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 @article{li2026deeph,
     title={DeepH-pack: a general-purpose neural network package for deep-learning electronic structure calculations},
     author={Li, Yang and Wang, Yanzhen and Zhao, Boheng and Gong, Xiaoxun and Wang, Yuxiang and Tang, Zechen and Wang, Zixu and Yuan, Zilong and Li, Jialin and Sun, Minghui and Chen, Zezhou and Tao, Honggeng and Wu, Baochun and Yu, Yuhang and Li, He and da Jornada, Felipe H. and Duan, Wenhui and Xu, Yong },
-    journal={npj Computational Materials},
+    journal={npj Comput. Mater.},
     volume={12},
     number={1},
     pages={361},
