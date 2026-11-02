@@ -30,8 +30,8 @@ def info():
         ("", 0.5),
         
         ("\033[1;33m📄 Complete package featuring the latest implementation, methodology, and workflow:\033[0m", 0.05),
-        ("    Yang Li, Yanzhen Wang, Boheng Zhao, et al. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)", 0.05),
-        ("\033[4;34m🔗 https://arxiv.org/abs/2601.02938\033[0m", 0.05),
+        ("    Yang Li, Yanzhen Wang, Boheng Zhao, et al. DeepH-pack: a general-purpose neural network package for deep-learning electronic structure calculations. npj Comput. Mater. 12, 361 (2026)", 0.05),
+        ("\033[4;34m🔗 https://doi.org/10.1038/s41524-026-02219-2\033[0m", 0.05),
         ("", 0.5),
         
         ("\033[1;32m✨ Happy Computing! ✨\033[0m", 0.1)

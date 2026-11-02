@@ -11,7 +11,7 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 
 - **Complete package featuring the latest implementation, methodology, and workflow:**
 
-    [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
+    [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: a general-purpose neural network package for deep-learning electronic structure calculations. npj Comput. Mater. 12, 361 (2026)](https://doi.org/10.1038/s41524-026-02219-2)
 
 ```bibtex
 @article{li2022deep,
@@ -26,10 +26,15 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 }
 
 @article{li2026deeph,
-    title={DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations},
+    title={DeepH-pack: a general-purpose neural network package for deep-learning electronic structure calculations},
     author={Li, Yang and Wang, Yanzhen and Zhao, Boheng and Gong, Xiaoxun and Wang, Yuxiang and Tang, Zechen and Wang, Zixu and Yuan, Zilong and Li, Jialin and Sun, Minghui and Chen, Zezhou and Tao, Honggeng and Wu, Baochun and Yu, Yuhang and Li, He and da Jornada, Felipe H. and Duan, Wenhui and Xu, Yong },
-    journal={arXiv preprint arXiv:2601.02938},
-    year={2026}
+    journal={npj Computational Materials},
+    volume={12},
+    number={1},
+    pages={361},
+    year={2026},
+    doi={10.1038/s41524-026-02219-2},
+    publisher={Nature Publishing Group}
 }
 ```
 

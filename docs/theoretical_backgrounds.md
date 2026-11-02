@@ -7,7 +7,7 @@ The Deep-learning Hamiltonian (DeepH) method, [starting from 2021](https://arxiv
 
 1. **Latest Software Implementation**
 
-    - [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: A general-purpose neural network package for deep-learning electronic structure calculations. arXiv:2601.02938 (2026)](https://arxiv.org/abs/2601.02938)
+    - [Yang Li, Yanzhen Wang, Boheng Zhao, *et al*. DeepH-pack: a general-purpose neural network package for deep-learning electronic structure calculations. npj Comput. Mater. 12, 361 (2026)](https://doi.org/10.1038/s41524-026-02219-2)
 
     | ![image](_image/H_is_all_you_need.png) |
     | :------ |
@@ -41,7 +41,7 @@ It's worth emphasizing that, despite lasting development, DeepH is still in its 
 
 A simplified schematic of the DeepH method is demonstrated as follows:
 ![image](_image/DeepH-schematic.png)
-[Source: arXiv:2601.02938 [cond-mat.mtrl-sci]](https://arxiv.org/abs/2601.02938)
+[Source: npj Comput. Mater. 12, 361 (2026)](https://doi.org/10.1038/s41524-026-02219-2)
 
 The core concept is as follows: Instead of modeling electronic structure properties such as band gap, electrical conductivity, etc. directly, we use DeepH to model the DFT Hamiltonian. Although the requirement for postprocessing introduces additional burden to the workflow, the advantages of modeling the Hamiltonian is apparent, to name a few:
 
