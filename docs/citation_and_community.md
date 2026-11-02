@@ -38,9 +38,9 @@ If you use `DeepH-pack` in your work, please cite the following publications.
 ### 🎤 DeepH-pack Global User Conference
 
 - **Upcoming Events**:
-  - **2026 Workshop**: The 2026 DeepH-pack Workshop is coming soon. The [2026 tutorial site](https://deeph-workshop-tutorial.readthedocs.io/en/2026/) is now public.
+  - **2026 Workshop**: The 2026 DeepH-pack Workshop is coming soon. The [2026 tutorial site](https://workshop.deeph-pack.com/en/latest/) is now public.
 
-- **2025 Workshop Materials**: [2025 Tutorials & Case Studies](https://deeph-workshop-tutorial.readthedocs.io/en/2025/)
+- **2025 Workshop Materials**: [2025 Tutorials & Case Studies](https://workshop.deeph-pack.com/en/2025/)
 
 | ![DeepH-Conference-2025](./_image/User_Conference_2025.jpg) |
 | :------: |
